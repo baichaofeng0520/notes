@@ -1,0 +1,27 @@
+
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+      <title>test</title>
+    </head>
+    <body onresize="resizeFresh()">
+      <div id="app"></div>
+      <!-- built files will be auto injected -->
+      <script>
+        if (document.documentElement.clientWidth > 500) {
+            document.documentElement.style.fontSize = 80 + 'px'
+        } else {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+        }
+        var x=window.innerWidth;
+        function resizeFresh(){
+            if(x!=window.innerWidth){
+                location.reload();
+            }
+        }
+      </script>
+    </body>
+  </html>
+  
+  
