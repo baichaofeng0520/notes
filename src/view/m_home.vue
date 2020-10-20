@@ -120,67 +120,12 @@
                 </li>
                 <li>
                     <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'斯坦森',url:'http://tx.hls.huya.com/huyalive/30765679-2554414705-10971127618396487680-3048991636-10057-A-0-1.m3u8'}}">斯坦森</router-link>
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'11',url:'https://test.yocoolnet.in/files/mp4/x/A/J/xAJFK.m3u8'}}">11</router-link>
                     </p>
                 </li>
                 <li>
                     <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'甄子丹',url:'http://ws4.streamhls.huya.com/huyalive/29169025-2686219938-11537226783573147648-2847699096-10057-A-1524024759-1_1200/playlist.m3u8'}}">甄子丹</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'李连杰',url:'http://js.hls.huya.com/huyalive/94525224-2460686093-10568566295157014528-2789253848-10057-A-0-1_1200.m3u8'}}">李连杰</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'高清电影',url:'http://aldirect.hls.huya.com/huyalive/29169025-2686219962-11537226886652362752-2710080226-10057-A-0-1_1200.m3u8'}}">高清电影</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'怪物科幻',url:'http://tx.hls.huya.com/huyalive/30765679-2478268764-10644083292078342144-2847699106-10057-A-0-1.m3u8'}}">怪物科幻</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'女神系列',url:'https://aldirect.hls.huya.com/huyalive/94525224-2472147404-10617792251071299584-2777026638-10057-A-0-1_1200.m3u8'}}">女神系列</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'女神港片',url:'http://tx.hls.huya.com/huyalive/30765679-2484192476-10669525441389264896-2789274564-10057-A-0-1.m3u8'}}">女神港片</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'漫威电影',url:'http://tx.hls.huya.com/huyalive/30765679-2504742278-10757786168918540288-3049003128-10057-A-0-1.m3u8'}}">漫威电影</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'韩-GOODTV',url:'http://mobliestream.c3tv.com:554/live/goodtv.sdp/playlist.m3u8'}}">韩-GOODTV</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'韩国高清1',url:'http://123.108.164.71/etv2sb/phd10062/playlist.m3u8'}}">韩国高清1</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'韩国高清2',url:'http://123.108.164.110/etv1sb/phd10497/playlist.m3u8'}}">韩国高清2</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'dddd',url:'rtmp://198.211.33.185/livepkgr/1C'}}">dddd</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'ff',url:'https://test.yocoolnet.in/files/mp4/x/A/J/xAJFK.m3u8'}}">ff</router-link>
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'22',url:'https://test.yocoolnet.in/files/mp4/Z/5/F/Z5FWT.m3u8'}}">22</router-link>
                     </p>
                 </li>
             </ul>

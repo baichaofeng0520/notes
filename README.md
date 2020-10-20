@@ -1,10 +1,10 @@
 # test
 
 # gh_pages地址
-https://baichaofeng1991.github.io/test
+https://baichaofeng0520.github.io/notes/
 
 # 码云pages地址
-http://baichaofeng1991.gitee.io/test
+http://baichaofeng1991.gitee.io/notes
 
 > A Vue.js project
 
