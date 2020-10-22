@@ -42,7 +42,7 @@ export default {
 input,textarea{word-wrap:none;-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text;}
 html{-webkit-text-size-adjust:none;overflow-x:hidden}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,input,textarea,p,span{padding:0;margin:0;}
-body{font:normal 14px/1.5em pbfont,"微软雅黑","宋体","冬青黑体简体中文 w3"; color: #333;background: #fafafa}
+body{font:normal 14px/1.5em pbfont,"微软雅黑","宋体","冬青黑体简体中文 w3"; color: #333;background: #ffffff;}
 img,html,body{border:0;}
 /** 重置表格元素 **/
 input{border:0; outline: 0;}
@@ -66,4 +66,34 @@ img{vertical-align:middle;}
 .w1000{ width: 1000px; margin: 0 auto; position:relative;}
 a {color: #3e4146;text-decoration: none;-webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;-o-transition: all 0.3s ease;transition: all 0.3s ease;}/* ease开始和结束慢，中间快 || linear：匀速 || ease-in：加速 || ease-out：减速*/
 
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #a39f9f;}
+input:-moz-placeholder, textarea:-moz-placeholder {color:#a39f9f;}
+input::-moz-placeholder, textarea::-moz-placeholder {color:#a39f9f;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {color:#a39f9f;}
+
+@media screen and (max-width: 321px) {
+    body {
+        font-size:16px
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width:400px) {
+    body {
+        font-size:18px
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
+    body {
+        font-size:20px
+    }
+}
+
+@media screen and (min-width: 500px) {
+    body {
+        font-size: 22px;
+        max-width: 11rem;
+        margin: 0 auto;
+    }
+}
 </style>

@@ -289,6 +289,7 @@ export default {
 .list-con li {padding: .3rem 0;border-bottom: 1px solid #eeeeee;}
 .list-con li:last-child {margin-bottom: 0;border-bottom: 0;}
 .list-con li p.title {font-size: .3rem;font-weight: bold;color: #333333;margin-bottom: .1rem;cursor: pointer;}
+.list-con li p.title a {color: #55aaff;word-break: break-word;}
 .list-con li p.title:hover {color: #d72b00;}
 .list-con li p.intro {font-size: .28rem;color: #666666;font-weight: 400;line-height: .48rem;}
 .w1000 {width: 100%}

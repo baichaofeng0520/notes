@@ -609,12 +609,13 @@
         </div>
         <!-- 视频 -->
         <div class="list-con w1000 mobile" id="list-con" v-if="index == 'm-1'">
-            <video-player class="video-player vjs-custom-skin"
+            <!-- <video-player class="video-player vjs-custom-skin"
             ref="videoPlayer"
             :playsinline="true"
             :options="playerOptions"
             @ready="playerReadied">
-            </video-player>
+            </video-player> -->
+            <video :src="this.$route.query.url" controls="controls" muted autoplay="autoplay"></video>
         </div>
         <!-- css样式 -->
         <div class="list-con w1000" id="list-con" v-if="index == 'cs-1'">
@@ -845,6 +846,7 @@ export default {
         console.log('获取Vuex中的数据',this.$store.state.count)
         console.log('获取Vuex中的数据',this.$store.getters.doneTodos)
         console.log('computed执行',this.a)
+        console.log('视频连接',this.$route.query.url)
 
         // this.timer = setInterval(() => {
         //     if(this.n == this.arrColor.length) {

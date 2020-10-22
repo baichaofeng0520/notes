@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 import axios from 'axios'
-import './assets/js/special'
+// import './assets/js/special'
 import VideoPlayer from 'vue-video-player';
 import "video.js/dist/video-js.css";
 import hljs from 'highlight.js';
