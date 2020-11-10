@@ -111,23 +111,16 @@
             </ul>
         </div>
         <!-- 娱乐 -->
-        <div class="list-con w1000" v-if="receive == 6">
-            <ul>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'毒液',url:'https://cdn.letv-cdn.com/2018/12/05/JOCeEEUuoteFrjCg/playlist.m3u8'}}">《毒液》</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'11',url:'https://test.yocoolnet.in/files/mp4/x/A/J/xAJFK.m3u8'}}">11</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'22',url:'https://test.yocoolnet.in/files/mp4/Z/5/F/Z5FWT.m3u8'}}">22</router-link>
-                    </p>
-                </li>
+        <div class="list-con w1000 video-box" v-if="receive == 6">
+            <ul class="clearfix">
+                <block class="fl" v-for="(item,index) in videoUrl" :key="index">
+                    <li>
+                        <p class="title">
+                            <router-link :to ="{path:'/detail',query:{index:'m-1',title:item.title,url:item.url}}"><img :src="require('../assets/img/'+item.id+'.jpg')" alt=""></router-link>
+                        </p>
+                        <p class="name">{{item.title}}</p>
+                    </li>
+                </block>
             </ul>
         </div>
         <!-- 工具类网站 -->
@@ -256,7 +249,15 @@ export default {
     data() {
         return {
             num: 11,//父组件传递给子组件的数据
-            receive: 1//子组件传递给父组件的数据
+            receive: 1,//子组件传递给父组件的数据
+            videoUrl: [
+                {url: 'https://test.yocoolnet.in/files/mp4/x/A/J/xAJFK.m3u8',title: '视频-1',id: 1},
+                {url: 'https://test.yocoolnet.in/files/mp4/Z/5/F/Z5FWT.m3u8',title: '视频-2',id: 2},
+                {url: 'https://cdn.letv-cdn.com/2018/12/05/JOCeEEUuoteFrjCg/playlist.m3u8',title: '毒液',id: 3},
+                {url: 'https://test.yocoolnet.in/files/mp4/t/9/N/t9NAw.m3u8',title: '视频-3',id: 4},
+                {url: 'https://test.yocoolnet.in/files/mp4/V/6/F/V6FKO.m3u8',title: '视频-4',id: 5},
+                ],
+            Arr: []
         };
     },
     computed: {
@@ -266,7 +267,21 @@ export default {
 
     },
     mounted() {
+        var requireModule = require.context(
+            "../assets/img",
+            false,
+            /\.jpg$/
+        );
+        console.info(requireModule);
+        for (var i = 0; i < requireModule.keys().length; i++) {
+            this.Arr.push(
+                requireModule.keys()[i].substr(2, requireModule.keys()[i].length)
+            );
+        }
+        console.log('数组长度-1', this.Arr.length)
+        console.log('数组长度-2', this.videoUrl.length)
 
+        this.getdata()
     },
     watch: {
 
@@ -275,8 +290,25 @@ export default {
         //接收子组件中传递来的数据方法
         transmitData(data) {
             this.receive = data
-        }
+        },
 
+        getdata(){
+            if(this.Arr.length == this.videoUrl.length) {
+                console.log('不请求')
+            } else {
+                console.log('else')
+                // 请求python数据
+                for(let i = 0;i < this.videoUrl.length;i++) {
+                    setTimeout(function() {
+                        this.$ajax.get('http://127.0.0.1:5000/hello?vUrl=' + this.videoUrl[i].url + '&id=' + this.videoUrl[i].id).then((res)=>{
+                            console.log('请求数据',res.data)
+                        }).catch((error)=>{
+                            console.log(error)
+                        })
+                    },1000)
+                }
+            }
+        },
     },
     components: {
         myHeader
@@ -289,8 +321,13 @@ export default {
 .list-con li {padding: .3rem 0;border-bottom: 1px solid #eeeeee;}
 .list-con li:last-child {margin-bottom: 0;border-bottom: 0;}
 .list-con li p.title {font-size: .3rem;font-weight: bold;color: #333333;margin-bottom: .1rem;cursor: pointer;}
+.list-con li p.title img {max-width: 2rem;}
 .list-con li p.title a {color: #55aaff;word-break: break-word;}
 .list-con li p.title:hover {color: #d72b00;}
 .list-con li p.intro {font-size: .28rem;color: #666666;font-weight: 400;line-height: .48rem;}
+.video-box ul {display: flex;align-items: center;flex-wrap: wrap;margin-right: -.41rem;}
+.video-box ul li {text-align: center;margin-right: 0.39rem;padding: 0;}
+.video-box ul li p.name {font-size: 0.3rem;color: #999999;margin-top: 0.1rem;font-weight: bold;}
+.video-box ul li p.title {height: 3rem;display: flex;align-items: center;justify-content: center;overflow: hidden;box-sizing: border-box;border: 1px solid #e6e6e6;}
 .w1000 {width: 100%}
 </style>

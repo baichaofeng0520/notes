@@ -17,6 +17,10 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+        // '/': {
+        //   target:"127.0.0.1:5000",//这里设置你要访问的域名（或IP+端口）
+        //   changeOrigin:true,
+        // },
         '/api':{
             target:"https://app.chuandong.com/",//这里设置你要访问的域名（或IP+端口）
             changeOrigin:true,

@@ -615,7 +615,9 @@
             :options="playerOptions"
             @ready="playerReadied">
             </video-player> -->
-            <video :src="this.$route.query.url" controls="controls" muted autoplay="autoplay"></video>
+            <video :src="videoUrl" controls="controls" muted autoplay="autoplay" width="100%" crossOrigin="anonymous" ref="videoFilter" id="videofile" onloadeddata="myFunction()">
+            </video>
+            <div id="output"></div>
         </div>
         <!-- css样式 -->
         <div class="list-con w1000" id="list-con" v-if="index == 'cs-1'">
@@ -781,12 +783,12 @@ import myHead from '../components/header';
 
 import { Make } from "../assets/js/index";
 
-import "vue-video-player/src/custom-theme.css";
-// videojs
-import videojs from 'video.js'
-window.videojs = videojs
-// hls plugin for videojs6
-require('videojs-contrib-hls/dist/videojs-contrib-hls.js')
+// import "vue-video-player/src/custom-theme.css";
+// // videojs
+// import videojs from 'video.js'
+// window.videojs = videojs
+// // hls plugin for videojs6
+// require('videojs-contrib-hls/dist/videojs-contrib-hls.js')
 export default {
     props: {
 
@@ -798,30 +800,31 @@ export default {
             n: 0,
             timer: '',
             title: '',
-            playerOptions: {
-                playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
-                autoplay: true, //如果true,浏览器准备好时开始回放。
-                muted: false, // 默认情况下将会消除任何音频。
-                loop: false, // 导致视频一结束就重新开始。
-                preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
-                language: 'zh-CN',
-                aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
-                fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
-                sources: [{
-                    withCredentials: false,
-                    type: "application/x-mpegURL",
-                    src: this.$route.query.url
-                }],
-                poster: "http://static.smartisanos.cn/pr/img/video/video_03_cc87ce5bdb.jpg", //你的封面地址
-                // width: document.documentElement.clientWidth,
-                notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
-                controlBar: {
-                    timeDivider: true,
-                    durationDisplay: true,
-                    remainingTimeDisplay: false,
-                    fullscreenToggle: true  //全屏按钮
-                },
-            }
+            videoUrl: '',
+            // playerOptions: {
+            //     playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
+            //     autoplay: true, //如果true,浏览器准备好时开始回放。
+            //     muted: false, // 默认情况下将会消除任何音频。
+            //     loop: false, // 导致视频一结束就重新开始。
+            //     preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+            //     language: 'zh-CN',
+            //     aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+            //     fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+            //     sources: [{
+            //         withCredentials: false,
+            //         type: "application/x-mpegURL",
+            //         src: this.$route.query.url
+            //     }],
+            //     poster: "http://static.smartisanos.cn/pr/img/video/video_03_cc87ce5bdb.jpg", //你的封面地址
+            //     // width: document.documentElement.clientWidth,
+            //     notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+            //     controlBar: {
+            //         timeDivider: true,
+            //         durationDisplay: true,
+            //         remainingTimeDisplay: false,
+            //         fullscreenToggle: true  //全屏按钮
+            //     },
+            // }
 
         };
     },
@@ -837,6 +840,7 @@ export default {
     //一般用来向后端发起请求，拿到数据后做一些业务处理。该函数在模版渲染完成后才被调用。DOM操作一般是在mounted钩子函数中进行。
     mounted() {
         this.followDoctor()
+        // this.myFunction()
         
         this.index = this.$route.query.index
         console.log('获取路由传递过来的参数',this.$route.query.index)
@@ -856,11 +860,12 @@ export default {
         //     document.getElementById('list-con').style.borderColor = this.arrColor[this.n]
         //     this.n++
         // }, 2500);
+        
     },
     //组件销毁之前执行
     beforeDestroy() {
         //清除定时器
-        clearInterval(this.timer)
+        // clearInterval(this.timer)
     },
     //用于检测vue实例上数据的变动
     //默认加载的时候先computed再watch，不执行methods；等触发某一事件后，则是：先methods再watch。
@@ -895,6 +900,15 @@ export default {
                 console.log(error);
             });
 
+            this.$ajax.get('https://cdn.letv-cdn.com/2018/12/05/JOCeEEUuoteFrjCg/playlist.m3u8',{       // 还可以直接把参数拼接在url后边
+            }).then(function(res){
+                console.log('视频数据',res)
+                console.log('链接',res.config.url)
+                this.videoUrl = res.config.url
+            }).catch(function (error) {
+                console.log(error);
+            });
+
             /* 封装接口调用方式 */
             let parames = {
                 id: 137
@@ -903,6 +917,36 @@ export default {
                 console.log('接口返回数据',res)
                 console.log('后台返回数据',res.data)
             });
+        },
+
+        myFunction() {
+            var that = this
+            var video = document.getElementById("videofile");
+            console.log(video, 66666);
+            video.currentTime = 5; //必须设置视频当前时长，要不然会黑屏
+            var output = document.getElementById("output");
+            // 创建画布准备截图
+            var canvas = document.createElement('canvas');
+            // 创建图片标签
+            var img = document.createElement("img");
+            // 获取视频的标签
+            video = document.getElementById('videofile');
+            video.setAttribute('crossOrigin', 'anonymous');
+
+            alert('加载完当前帧')
+            // 设置画布的宽高
+            canvas.width = video.clientWidth;
+            canvas.height = video.clientHeight;
+            console.log('44444', video.clientWidth, video.clientHeight, window.getComputedStyle(that.$refs.videoFilter).width, window.getComputedStyle(that.$refs.videoFilter).height);
+            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            var dataURL = canvas.toDataURL('image/jpeg');
+            // console.log(dataURL,"-----")
+            img.src = dataURL;
+            //img.width = 400;
+            //img.height = 300;
+            // 添加到output盒子里面
+            output.appendChild(img);
+            // console.log(img)
         },
 
     },
