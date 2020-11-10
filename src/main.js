@@ -11,6 +11,8 @@ import "video.js/dist/video-js.css";
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css'
 
+import 'swiper/dist/css/swiper.min.css';
+
 Vue.use(VideoPlayer)
 Vue.config.productionTip = false
 Vue.prototype.$ajax = axios

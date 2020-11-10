@@ -615,9 +615,8 @@
             :options="playerOptions"
             @ready="playerReadied">
             </video-player> -->
-            <video :src="videoUrl" controls="controls" muted autoplay="autoplay" width="100%" crossOrigin="anonymous" ref="videoFilter" id="videofile" onloadeddata="myFunction()">
+            <video :src="this.$route.query.url" controls="controls" muted autoplay="autoplay" width="100%" crossOrigin="anonymous" ref="videoFilter" id="videofile">
             </video>
-            <div id="output"></div>
         </div>
         <!-- css样式 -->
         <div class="list-con w1000" id="list-con" v-if="index == 'cs-1'">
@@ -840,7 +839,6 @@ export default {
     //一般用来向后端发起请求，拿到数据后做一些业务处理。该函数在模版渲染完成后才被调用。DOM操作一般是在mounted钩子函数中进行。
     mounted() {
         this.followDoctor()
-        // this.myFunction()
         
         this.index = this.$route.query.index
         console.log('获取路由传递过来的参数',this.$route.query.index)
@@ -917,38 +915,7 @@ export default {
                 console.log('接口返回数据',res)
                 console.log('后台返回数据',res.data)
             });
-        },
-
-        myFunction() {
-            var that = this
-            var video = document.getElementById("videofile");
-            console.log(video, 66666);
-            video.currentTime = 5; //必须设置视频当前时长，要不然会黑屏
-            var output = document.getElementById("output");
-            // 创建画布准备截图
-            var canvas = document.createElement('canvas');
-            // 创建图片标签
-            var img = document.createElement("img");
-            // 获取视频的标签
-            video = document.getElementById('videofile');
-            video.setAttribute('crossOrigin', 'anonymous');
-
-            alert('加载完当前帧')
-            // 设置画布的宽高
-            canvas.width = video.clientWidth;
-            canvas.height = video.clientHeight;
-            console.log('44444', video.clientWidth, video.clientHeight, window.getComputedStyle(that.$refs.videoFilter).width, window.getComputedStyle(that.$refs.videoFilter).height);
-            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-            var dataURL = canvas.toDataURL('image/jpeg');
-            // console.log(dataURL,"-----")
-            img.src = dataURL;
-            //img.width = 400;
-            //img.height = 300;
-            // 添加到output盒子里面
-            output.appendChild(img);
-            // console.log(img)
-        },
-
+        }
     },
     components: {
         myHead,
