@@ -54,12 +54,12 @@ export default {
         new Swiper('.swiper-container', {
             loop: true,
             observer: true,
+            autoplay: 3000,
             // 如果需要分页器
             pagination: '.swiper-pagination',
             // 如果需要前进后退按钮
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            // autoplay: true,   //是否自动切换
+            // nextButton: '.swiper-button-next',
+            // prevButton: '.swiper-button-prev',
             // 如果需要滚动条
             // scrollbar: '.swiper-scrollbar',
             //如果需要自动切换海报
