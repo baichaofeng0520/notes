@@ -615,7 +615,7 @@
             :options="playerOptions"
             @ready="playerReadied">
             </video-player> -->
-            <video :src="this.$route.query.url" controls="controls" muted autoplay="autoplay" width="100%" crossOrigin="anonymous" ref="videoFilter" id="videofile">
+            <video :src="this.$route.query.url" controls="controls" autoplay="autoplay" width="100%">
             </video>
         </div>
         <!-- css样式 -->
