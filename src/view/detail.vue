@@ -609,13 +609,10 @@
         </div>
         <!-- 视频 -->
         <div class="list-con w1000 mobile" id="list-con" v-if="index == 'm-1'">
-            <!-- <video-player class="video-player vjs-custom-skin"
-            ref="videoPlayer"
-            :playsinline="true"
-            :options="playerOptions"
-            @ready="playerReadied">
-            </video-player> -->
-            <video :src="this.$route.query.url" controls="controls" autoplay="autoplay" width="100%">
+            <!-- <video :src="this.$route.query.url" controls="controls" autoplay="autoplay" width="100%">
+            </video> -->
+            <video id="my-video" class="video-js vjs-default-skin box" controls preload="auto">
+                <source :src="this.$route.query.url" type="application/x-mpegURL"/>
             </video>
         </div>
         <!-- css样式 -->
@@ -781,13 +778,9 @@
 import myHead from '../components/header';
 
 import { Make } from "../assets/js/index";
+import videojs from 'video.js';
+import 'videojs-contrib-hls';
 
-// import "vue-video-player/src/custom-theme.css";
-// // videojs
-// import videojs from 'video.js'
-// window.videojs = videojs
-// // hls plugin for videojs6
-// require('videojs-contrib-hls/dist/videojs-contrib-hls.js')
 export default {
     props: {
 
@@ -799,32 +792,6 @@ export default {
             n: 0,
             timer: '',
             title: '',
-            videoUrl: '',
-            // playerOptions: {
-            //     playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
-            //     autoplay: true, //如果true,浏览器准备好时开始回放。
-            //     muted: false, // 默认情况下将会消除任何音频。
-            //     loop: false, // 导致视频一结束就重新开始。
-            //     preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
-            //     language: 'zh-CN',
-            //     aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
-            //     fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
-            //     sources: [{
-            //         withCredentials: false,
-            //         type: "application/x-mpegURL",
-            //         src: this.$route.query.url
-            //     }],
-            //     poster: "http://static.smartisanos.cn/pr/img/video/video_03_cc87ce5bdb.jpg", //你的封面地址
-            //     // width: document.documentElement.clientWidth,
-            //     notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
-            //     controlBar: {
-            //         timeDivider: true,
-            //         durationDisplay: true,
-            //         remainingTimeDisplay: false,
-            //         fullscreenToggle: true  //全屏按钮
-            //     },
-            // }
-
         };
     },
     //是在DOM执行完成后立马执行（如：赋值）
@@ -849,6 +816,19 @@ export default {
         console.log('获取Vuex中的数据',this.$store.getters.doneTodos)
         console.log('computed执行',this.a)
         console.log('视频连接',this.$route.query.url)
+        
+        setTimeout(function() {
+            videojs("my-video", {
+                bigPlayButton: false,
+                textTrackDisplay: false,
+                posterImage: true,
+                errorDisplay: false,
+                controlBar: true
+            }, function() {
+                this.play();
+            });
+        },3000)
+        
 
         // this.timer = setInterval(() => {
         //     if(this.n == this.arrColor.length) {
@@ -902,7 +882,6 @@ export default {
             }).then(function(res){
                 console.log('视频数据',res)
                 console.log('链接',res.config.url)
-                this.videoUrl = res.config.url
             }).catch(function (error) {
                 console.log(error);
             });
@@ -948,6 +927,7 @@ font-weight: bold;}
 .content .part p li img {border: 1px solid #d4d4d4;}
 .content .part .im-1 {display: block;width: 661px;height: 350px; background: url('../assets/image/7.jpg')no-repeat center;background-size: 100% 100%;}
 .content .part .im-2 {display: block;width: 399px;height: 257px; background: url('../assets/image/8.jpg')no-repeat center;background-size: 100% 100%;}
+.video-js {width: 100%;}
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;box-sizing: border-box;padding: .3rem;}
     .mobile {padding: .18rem .15rem!important;}

@@ -116,7 +116,7 @@
                 <block class="fl" v-for="(item,index) in videoUrl" :key="index">
                     <li>
                         <p class="title">
-                            <router-link :to ="{path:'/detail',query:{index:'m-1',title:item.title,url:item.url}}"><img :src="require('../assets/img/'+item.id+'.jpg')" alt=""></router-link>
+                            <router-link :to="{path:'/detail',query:{index:'m-1',title:item.title,url:item.url}}"><img :src="require('../assets/img/'+item.id+'.jpg')" alt=""></router-link>
                         </p>
                         <p class="name">{{item.title}}</p>
                     </li>
@@ -267,6 +267,7 @@ export default {
 
     },
     mounted() {
+        //判断文件夹中的图片数量
         var requireModule = require.context(
             "../assets/img",
             false,
