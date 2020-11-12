@@ -609,11 +609,19 @@
         </div>
         <!-- 视频 -->
         <div class="list-con w1000 mobile" id="list-con" v-if="index == 'm-1'">
+            <!-- 基础video -->
             <!-- <video :src="this.$route.query.url" controls="controls" autoplay="autoplay" width="100%">
             </video> -->
-            <video id="my-video" class="video-js vjs-default-skin box" controls preload="auto">
+            <!-- video.js播放 -->
+            <!-- <video id="my-video" class="video-js vjs-default-skin box" controls preload="auto">
                 <source :src="this.$route.query.url" type="application/x-mpegURL"/>
-            </video>
+            </video> -->
+            <video-player  class="video-player vjs-custom-skin"
+                ref="videoPlayer" 
+                :playsinline="true" 
+                :options="playerOptions"
+                @play="onPlayerPlay($event)"
+            ></video-player>
         </div>
         <!-- css样式 -->
         <div class="list-con w1000" id="list-con" v-if="index == 'cs-1'">
@@ -778,8 +786,9 @@
 import myHead from '../components/header';
 
 import { Make } from "../assets/js/index";
-import videojs from 'video.js';
-import 'videojs-contrib-hls';
+//viddeo.js播放
+// import videojs from 'video.js';
+// import 'videojs-contrib-hls';
 
 export default {
     props: {
@@ -792,11 +801,35 @@ export default {
             n: 0,
             timer: '',
             title: '',
+            playerOptions:{
+                playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
+                autoplay: true, //如果true,浏览器准备好时开始回放。
+                muted: false, // 默认情况下将会消除任何音频。
+                loop: false, // 导致视频一结束就重新开始。
+                preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+                language: 'zh-CN',
+                aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+                // fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+                sources: [{
+                    type: "application/x-mpegURL",//这里的种类支持很多种：基本视频格式、直播、流媒体等，具体可以参看git网址项目
+                    src: this.$route.query.url //url地址
+                }],
+                hls:true, //如果是播放m3u8必须加（需注释掉techOrder,不然会有报错）
+                // techOrder: ['flash'], //播放rtmp必须加
+                poster: "", //你的封面地址
+                notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+                controlBar: {
+                    timeDivider: true,
+                    durationDisplay: true,
+                    remainingTimeDisplay: false,
+                    fullscreenToggle: true  //全屏按钮
+                }
+            }
         };
     },
     //是在DOM执行完成后立马执行（如：赋值）
     computed: {
-        a: '1'
+        // a: '1'
         
     },
     //执行时挂载阶段还没有开始，模版还没有渲染成html，所以无法获取元素。created钩子函数主要用来初始化数据。
@@ -817,17 +850,18 @@ export default {
         console.log('computed执行',this.a)
         console.log('视频连接',this.$route.query.url)
         
-        setTimeout(function() {
-            videojs("my-video", {
-                bigPlayButton: false,
-                textTrackDisplay: false,
-                posterImage: true,
-                errorDisplay: false,
-                controlBar: true
-            }, function() {
-                this.play();
-            });
-        },3000)
+        //video.js播放
+        // setTimeout(function() {
+        //     videojs("my-video", {
+        //         bigPlayButton: false,
+        //         textTrackDisplay: false,
+        //         posterImage: true,
+        //         errorDisplay: false,
+        //         controlBar: true
+        //     }, function() {
+        //         this.play();
+        //     });
+        // },3000)
         
 
         // this.timer = setInterval(() => {
@@ -857,13 +891,13 @@ export default {
         changeStatus() {
             this.$store.commit('increment','改变之后的状态')
         },
-        playerReadied(player) {
-            var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls
-            player.tech_.hls.xhr.beforeRequest = function(options) {
-                // console.log(options)
-                return options
-            }
-        },
+        // playerReadied(player) {
+        //     var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls
+        //     player.tech_.hls.xhr.beforeRequest = function(options) {
+        //         // console.log(options)
+        //         return options
+        //     }
+        // },
 
         //调用api示例
         followDoctor() {
@@ -928,6 +962,7 @@ font-weight: bold;}
 .content .part .im-1 {display: block;width: 661px;height: 350px; background: url('../assets/image/7.jpg')no-repeat center;background-size: 100% 100%;}
 .content .part .im-2 {display: block;width: 399px;height: 257px; background: url('../assets/image/8.jpg')no-repeat center;background-size: 100% 100%;}
 .video-js {width: 100%;}
+video-player {width: 100%;}
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;box-sizing: border-box;padding: .3rem;}
     .mobile {padding: .18rem .15rem!important;}
