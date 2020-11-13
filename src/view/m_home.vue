@@ -212,6 +212,84 @@
                 </li>
                 <li>
                     <p class="title">
+                        <span class="name">python 获取视频第一个画面</span>
+                        <a class="url" href="https://blog.csdn.net/weixin_37989267/article/details/94432815" target="_blank">https://blog.csdn.net/weixin_37989267/article/details/94432815</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Vue + Flask 解决跨域限制问题</span>
+                        <a class="url" href="https://blog.csdn.net/weixin_38564268/article/details/104857300" target="_blank">https://blog.csdn.net/weixin_38564268/article/details/104857300</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Python库—CV2</span>
+                        <a class="url" href="https://blog.csdn.net/yu1014745867/article/details/87861593?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf" target="_blank">https://blog.csdn.net/yu1014745867/article/details/87861593?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">python导入cv2的方法</span>
+                        <a class="url" href="" target="_blank">https://blog.csdn.net/weixin_40475450/article/details/80819866https://blog.csdn.net/weixin_40475450/article/details/80819866</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">如何爬blob:htttp://开头的视频</span>
+                        <a class="url" href="https://blog.csdn.net/qq_37591637/article/details/98944852?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param" target="_blank">https://blog.csdn.net/qq_37591637/article/details/98944852?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Git 查看提交历史记录</span>
+                        <a class="url" href="https://zhuoqianmingyue.blog.csdn.net/article/details/87548491?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param" target="_blank">https://zhuoqianmingyue.blog.csdn.net/article/details/87548491?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Links for opencv-python</span>
+                        <a class="url" href="https://pypi.tuna.tsinghua.edu.cn/simple/opencv-python/" target="_blank">https://pypi.tuna.tsinghua.edu.cn/simple/opencv-python/</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">vue常用插件之视频播放（rtmp m3u8）</span>
+                        <a class="url" href="https://www.cnblogs.com/sgs123/p/12197635.html" target="_blank">https://www.cnblogs.com/sgs123/p/12197635.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">async的基本用法</span>
+                        <a class="url" href="https://www.cnblogs.com/mengff/p/9651502.html" target="_blank">https://www.cnblogs.com/mengff/p/9651502.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">VUE怎么动态显示本地文件夹中的图片</span>
+                        <a class="url" href="https://www.it610.com/article/1282566234713374720.htm" target="_blank">https://www.it610.com/article/1282566234713374720.htm</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">vue常用插件之图片预览</span>
+                        <a class="url" href="https://www.cnblogs.com/sgs123/p/12197278.html" target="_blank">https://www.cnblogs.com/sgs123/p/12197278.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name"></span>
+                        <a class="url" href="" target="_blank"></a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name"></span>
+                        <a class="url" href="" target="_blank"></a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
                         <span class="name"></span>
                         <a class="url" href="" target="_blank"></a>
                     </p>
@@ -232,6 +310,46 @@
                         <router-link :to="{path:'/detail',query:{index:'cs-2',title:'display详解'}}">display详解</router-link>
                     </p>
                     <p class="intro">。。。。。。</p>
+                </li>
+            </ul>
+        </div>
+        <!-- 美图 -->
+        <div class="list-con w1000" v-if="receive == 9">
+            <ul>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-1',id: '1'}}">image-1</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-2',id: '2'}}">image-2</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-3',id: '3'}}">image-3</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-4',id: '4'}}">image-4</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-5',id: '5'}}">image-5</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-6',id: '6'}}">image-6</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-7',id: '7'}}">image-7</router-link>
+                    </p>
                 </li>
             </ul>
         </div>
@@ -280,6 +398,7 @@ export default {
             );
         }
         console.log('数组长度-1', this.Arr.length)
+        console.log('数组长度-1', this.Arr)
         console.log('数组长度-2', this.videoUrl.length)
 
         this.getdata()

@@ -622,6 +622,17 @@
                 :options="playerOptions"
                 @play="onPlayerPlay($event)"
             ></video-player>
+
+            <!-- 图片预览 -->
+            <!--1、以组件的形式-->
+            <!-- <viewer class="viewer" :images="photo">
+                <img v-for="(src,index) in photo" :src="src" :key="index"/> 
+            </viewer> -->
+            <!--2、以指令的形式-->
+           <!--  只需要将v-viewer指令添加到任意元素即可，该元素下的所有img元素都会被viewer自动处理。 -->
+            <!-- <div class="viewer" v-viewer>
+                <img v-for="(src,index) in photo" :src="src" :key="index"/> 
+            </div> -->
         </div>
         <!-- css样式 -->
         <div class="list-con w1000" id="list-con" v-if="index == 'cs-1'">
@@ -779,6 +790,12 @@
                 </div>
             </div>
         </div>
+        <!-- image show -->
+        <div class="list-con w1000" id="list-con" v-if="index == 'image-1'">
+            <viewer class="viewer" :images="images">
+                <img v-for="(src,index) in images" :src="src" :key="index"/> 
+            </viewer>
+        </div>
     </div>
 </template>
 
@@ -801,6 +818,8 @@ export default {
             n: 0,
             timer: '',
             title: '',
+            photo: [require('../assets/img/1.jpg'),require('../assets/img/2.jpg'),require('../assets/img/3.jpg'),require('../assets/img/4.jpg'),require('../assets/img/5.jpg'),require('../assets/image/17.png')],
+            images: [],
             playerOptions:{
                 playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
                 autoplay: true, //如果true,浏览器准备好时开始回放。
@@ -872,6 +891,61 @@ export default {
         //     document.getElementById('list-con').style.borderColor = this.arrColor[this.n]
         //     this.n++
         // }, 2500);
+
+        //判断文件夹中的图片数量
+        setTimeout(function() {
+            if(this.$route.query.id == 1) {
+                var requireModule = require.context(
+                    '../assets/im/image-1',
+                    false,
+                    /\.jpg$/
+                );
+            } else if (this.$route.query.id == 2) {
+                var requireModule = require.context(
+                    '../assets/im/image-2',
+                    false,
+                    /\.jpg$/
+                );
+            } else if (this.$route.query.id == 3) {
+                var requireModule = require.context(
+                    '../assets/im/image-3',
+                    false,
+                    /\.jpg$/
+                );
+            } else if (this.$route.query.id == 4) {
+                var requireModule = require.context(
+                    '../assets/im/image-4',
+                    false,
+                    /\.jpg$/
+                );
+            } else if (this.$route.query.id == 5) {
+                var requireModule = require.context(
+                    '../assets/im/image-5',
+                    false,
+                    /\.jpg$/
+                );
+            } else if (this.$route.query.id == 6) {
+                var requireModule = require.context(
+                    '../assets/im/image-6',
+                    false,
+                    /\.jpg$/
+                );
+            } else if (this.$route.query.id == 7) {
+                var requireModule = require.context(
+                    '../assets/im/image-7',
+                    false,
+                    /\.jpg$/
+                );
+            }
+            
+            console.info(requireModule);
+            for (var i = 0; i < requireModule.keys().length; i++) {
+                this.images.push(
+                    requireModule.keys()[i].substr(2, requireModule.keys()[i].length)
+                );
+            }
+        },3000)
+        
         
     },
     //组件销毁之前执行
@@ -891,13 +965,6 @@ export default {
         changeStatus() {
             this.$store.commit('increment','改变之后的状态')
         },
-        // playerReadied(player) {
-        //     var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls
-        //     player.tech_.hls.xhr.beforeRequest = function(options) {
-        //         // console.log(options)
-        //         return options
-        //     }
-        // },
 
         //调用api示例
         followDoctor() {
@@ -963,6 +1030,9 @@ font-weight: bold;}
 .content .part .im-2 {display: block;width: 399px;height: 257px; background: url('../assets/image/8.jpg')no-repeat center;background-size: 100% 100%;}
 .video-js {width: 100%;}
 video-player {width: 100%;}
+.viewer {display: flex;align-items: center;justify-content: space-between;}
+.viewer img {max-width: 1rem;}
+
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;box-sizing: border-box;padding: .3rem;}
     .mobile {padding: .18rem .15rem!important;}

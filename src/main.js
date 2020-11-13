@@ -22,6 +22,15 @@ import 'video.js/dist/video-js.css' //videoJs的样式
 import 'videojs-contrib-hls' //引入才能播放m3u8文件
 Vue.use(VideoPlayer)
 
+//图片预览
+import 'viewerjs/dist/viewer.css'
+import Viewer from 'v-viewer'
+Vue.use(Viewer)
+//配置项
+Viewer.setDefaults({
+  zIndexInline: 9999
+})
+
 Vue.config.productionTip = false
 Vue.prototype.$ajax = axios
 Vue.directive('highlight',function (el) {

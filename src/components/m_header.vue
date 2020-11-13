@@ -26,6 +26,7 @@
                         <li @click="route(6)">休闲/娱乐</li><span>|</span>
                         <li @click="route(7)">工具网站</li><span>|</span>
                         <li @click="route(8)">css</li>
+                        <li @click="route(9)">图片</li>
                     </ul>
                 </div>
             </div>
