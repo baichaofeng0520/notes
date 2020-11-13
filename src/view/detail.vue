@@ -792,8 +792,12 @@
         </div>
         <!-- image show -->
         <div class="list-con w1000" id="list-con" v-if="index == 'image-1'">
+            <!-- <blockquote v-for="(item,index) in images" :key="index">
+                <img :src="require('../assets/im/image-1/'+item +'')" alt="">
+
+            </blockquote> -->
             <viewer class="viewer" :images="images">
-                <img v-for="(src,index) in images" :src="src" :key="index"/> 
+                <img v-for="(src,index) in images" :src="require('../assets/im/image-'+ imageId +'/'+src+'')" :key="index"/> 
             </viewer>
         </div>
     </div>
@@ -820,6 +824,7 @@ export default {
             title: '',
             photo: [require('../assets/img/1.jpg'),require('../assets/img/2.jpg'),require('../assets/img/3.jpg'),require('../assets/img/4.jpg'),require('../assets/img/5.jpg'),require('../assets/image/17.png')],
             images: [],
+            imageId: this.$route.query.id,
             playerOptions:{
                 playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
                 autoplay: true, //如果true,浏览器准备好时开始回放。
@@ -893,44 +898,44 @@ export default {
         // }, 2500);
 
         //判断文件夹中的图片数量
-        setTimeout(function() {
-            if(this.$route.query.id == 1) {
+        // setTimeout(function() {
+            if(this.imageId == 1) {
                 var requireModule = require.context(
                     '../assets/im/image-1',
                     false,
                     /\.jpg$/
                 );
-            } else if (this.$route.query.id == 2) {
+            } else if (this.imageId == 2) {
                 var requireModule = require.context(
                     '../assets/im/image-2',
                     false,
                     /\.jpg$/
                 );
-            } else if (this.$route.query.id == 3) {
+            } else if (this.imageId == 3) {
                 var requireModule = require.context(
                     '../assets/im/image-3',
                     false,
                     /\.jpg$/
                 );
-            } else if (this.$route.query.id == 4) {
+            } else if (this.imageId == 4) {
                 var requireModule = require.context(
                     '../assets/im/image-4',
                     false,
                     /\.jpg$/
                 );
-            } else if (this.$route.query.id == 5) {
+            } else if (this.imageId == 5) {
                 var requireModule = require.context(
                     '../assets/im/image-5',
                     false,
                     /\.jpg$/
                 );
-            } else if (this.$route.query.id == 6) {
+            } else if (this.imageId == 6) {
                 var requireModule = require.context(
                     '../assets/im/image-6',
                     false,
                     /\.jpg$/
                 );
-            } else if (this.$route.query.id == 7) {
+            } else if (this.imageId == 7) {
                 var requireModule = require.context(
                     '../assets/im/image-7',
                     false,
@@ -944,7 +949,8 @@ export default {
                     requireModule.keys()[i].substr(2, requireModule.keys()[i].length)
                 );
             }
-        },3000)
+        // },3000)
+        console.log('tupian',this.images)
         
         
     },
@@ -1030,8 +1036,8 @@ font-weight: bold;}
 .content .part .im-2 {display: block;width: 399px;height: 257px; background: url('../assets/image/8.jpg')no-repeat center;background-size: 100% 100%;}
 .video-js {width: 100%;}
 video-player {width: 100%;}
-.viewer {display: flex;align-items: center;justify-content: space-between;}
-.viewer img {max-width: 1rem;}
+.viewer {display: flex;align-items: center;justify-content: space-between;width: 100%;overflow: hidden;overflow-x: auto;}
+.viewer img {max-width: 1rem;margin: 0 0.1rem;}
 
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;box-sizing: border-box;padding: .3rem;}
