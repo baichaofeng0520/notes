@@ -910,13 +910,13 @@ export default {
                     false,
                     /\.jpg$/
                 );
-            } 
-            // else if (this.imageId == 5) {
-            //     var requireModule = require.context(
-            //         '../assets/im/image-5',
-            //         false,
-            //         /\.jpg$/
-            //     );
+            } else if (this.imageId == 6) {
+                var requireModule = require.context(
+                    '../assets/im/image-6',
+                    false,
+                    /\.jpg$/
+                );
+            }
             // } else if (this.imageId == 6) {
             //     var requireModule = require.context(
             //         '../assets/im/image-6',
