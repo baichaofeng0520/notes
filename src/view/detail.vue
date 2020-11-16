@@ -794,7 +794,6 @@
         <div class="list-con w1000" id="list-con" v-if="index == 'image-1'">
             <!-- <blockquote v-for="(item,index) in images" :key="index">
                 <img :src="require('../assets/im/image-1/'+item +'')" alt="">
-
             </blockquote> -->
             <viewer class="viewer" :images="images">
                 <img v-for="(src,index) in images" :src="require('../assets/im/image-'+ imageId +'/'+src+'')" :key="index"/> 
@@ -923,25 +922,26 @@ export default {
                     false,
                     /\.jpg$/
                 );
-            } else if (this.imageId == 5) {
-                var requireModule = require.context(
-                    '../assets/im/image-5',
-                    false,
-                    /\.jpg$/
-                );
-            } else if (this.imageId == 6) {
-                var requireModule = require.context(
-                    '../assets/im/image-6',
-                    false,
-                    /\.jpg$/
-                );
-            } else if (this.imageId == 7) {
-                var requireModule = require.context(
-                    '../assets/im/image-7',
-                    false,
-                    /\.jpg$/
-                );
-            }
+            } 
+            // else if (this.imageId == 5) {
+            //     var requireModule = require.context(
+            //         '../assets/im/image-5',
+            //         false,
+            //         /\.jpg$/
+            //     );
+            // } else if (this.imageId == 6) {
+            //     var requireModule = require.context(
+            //         '../assets/im/image-6',
+            //         false,
+            //         /\.jpg$/
+            //     );
+            // } else if (this.imageId == 7) {
+            //     var requireModule = require.context(
+            //         '../assets/im/image-7',
+            //         false,
+            //         /\.jpg$/
+            //     );
+            // }
             
             console.info(requireModule);
             for (var i = 0; i < requireModule.keys().length; i++) {
