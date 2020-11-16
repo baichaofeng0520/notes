@@ -316,27 +316,27 @@
         <!-- 美图 -->
         <div class="list-con w1000" v-if="receive == 9">
             <ul>
-                <!-- <li>
+                <li>
                     <p class="title">
                         <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-1',id: '1'}}">image-1</router-link>
                     </p>
-                </li> -->
+                </li>
                 <li>
                     <p class="title">
                         <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-2',id: '2'}}">image-2</router-link>
                     </p>
                 </li>
-                <!-- <li>
+                <li>
                     <p class="title">
                         <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-3',id: '3'}}">image-3</router-link>
                     </p>
-                </li> -->
+                </li>
                 <li>
                     <p class="title">
                         <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-4',id: '4'}}">image-4</router-link>
                     </p>
                 </li>
-                <!-- <li>
+                <li>
                     <p class="title">
                         <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-5',id: '5'}}">image-5</router-link>
                     </p>
@@ -350,7 +350,7 @@
                     <p class="title">
                         <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-7',id: '7'}}">image-7</router-link>
                     </p>
-                </li> -->
+                </li>
             </ul>
         </div>
     </div>
