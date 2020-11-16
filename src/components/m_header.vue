@@ -69,7 +69,6 @@ export default {
             //   disableOnInteraction: false,//用户操作之后是否停止自动轮播默认true
             // },
         })
-
     },
     watch: {
 
@@ -91,8 +90,8 @@ export default {
 .head {background: #ffffff;width: 100%}
 .w1000 {width: 100%}
 .head .nav {background: #379be9;height: .6rem;}
-.head .nav ul {height: 100%;display: flex;align-items: center;justify-content: space-between;padding: 0 .2rem;}
-.head .nav ul span {color: #666666;font-size: .14rem}
+.head .nav ul {height: 100%;display: flex;align-items: center;justify-content: space-between;padding: 0 .2rem;overflow: hidden;overflow-x: auto;}
+.head .nav ul span {color: #666666;font-size: .14rem;}
 .head .nav li {display: inline-block;width: auto;height: 100%;text-align: center;color: #ffffff;font-weight: bold;font-size: .2rem;cursor: pointer;line-height: .6rem;}
 .head .nav li:hover {color: #ff3344;}
 .head .swiper-container {width: 100%;height: 5rem;overflow: hidden;}
