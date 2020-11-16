@@ -904,12 +904,6 @@ export default {
                     false,
                     /\.jpg$/
                 );
-            } else if (this.imageId == 3) {
-                var requireModule = require.context(
-                    '../assets/im/image-3',
-                    false,
-                    /\.jpg$/
-                );
             } else if (this.imageId == 4) {
                 var requireModule = require.context(
                     '../assets/im/image-4',
