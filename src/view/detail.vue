@@ -915,31 +915,33 @@ export default {
                 false,
                 /\.jpg$/
             );
-        } else if (this.imageId == 4) {
-            var requireModule = require.context(
-                '../assets/im/image-4',
-                false,
-                /\.jpg$/
-            );
-        } else if (this.imageId == 5) {
-            var requireModule = require.context(
-                '../assets/im/image-5',
-                false,
-                /\.jpg$/
-            );
-        } else if (this.imageId == 6) {
-            var requireModule = require.context(
-                '../assets/im/image-6',
-                false,
-                /\.jpg$/
-            );
-        } else if (this.imageId == 7) {
-            var requireModule = require.context(
-                '../assets/im/image-7',
-                false,
-                /\.jpg$/
-            );
-        }
+        } 
+        // else if (this.imageId == 4) {
+        //     var requireModule = require.context(
+        //         '../assets/im/image-4',
+        //         false,
+        //         /\.jpg$/
+        //     );
+        // } 
+        // else if (this.imageId == 5) {
+        //     var requireModule = require.context(
+        //         '../assets/im/image-5',
+        //         false,
+        //         /\.jpg$/
+        //     );
+        // } else if (this.imageId == 6) {
+        //     var requireModule = require.context(
+        //         '../assets/im/image-6',
+        //         false,
+        //         /\.jpg$/
+        //     );
+        // } else if (this.imageId == 7) {
+        //     var requireModule = require.context(
+        //         '../assets/im/image-7',
+        //         false,
+        //         /\.jpg$/
+        //     );
+        // }
         
         console.info(requireModule);
         for (var i = 0; i < requireModule.keys().length; i++) {
