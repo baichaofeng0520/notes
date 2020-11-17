@@ -66,45 +66,16 @@ module.exports = {
         }
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-              },
-              // optipng.enabled: false will disable optipng
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: [0.65, 0.90],
-                speed: 4
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              // the webp option will enable WEBP
-              webp: {
-                quality: 75
-              }
-            }
-          },
-        ],
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+       // loader: 'url-loader',
+        // options: {
+            // limit: 100000,
+            // name: utils.assetsPath('img/[name].[hash:7].[ext]')
+        // }
+        loader: ['url-loader?limit=10000&name=' + utils.assetsPath('img/[name].[hash:7].[ext]'),
+            'image-webpack-loader' 
+        ]
       }
-      // {
-      //   test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-      //  // loader: 'url-loader',
-      //   // options: {
-      //       // limit: 100000,
-      //       // name: utils.assetsPath('img/[name].[hash:7].[ext]')
-      //   // }
-      //   loader: ['url-loader?limit=10000&name=' + utils.assetsPath('img/[name].[hash:7].[ext]'),
-      //       'image-webpack-loader' 
-      //   ]
-      // }
     ]
   },
   node: {
