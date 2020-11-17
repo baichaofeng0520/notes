@@ -897,58 +897,56 @@ export default {
         // }, 2500);
 
         //判断文件夹中的图片数量
-        // setTimeout(function() {
-            if (this.imageId == 1) {
-                var requireModule = require.context(
-                    '../assets/im/image-1',
-                    false,
-                    /\.jpg$/
-                );
-            } else if (this.imageId == 2) {
-                var requireModule = require.context(
-                    '../assets/im/image-2',
-                    false,
-                    /\.jpg$/
-                );
-            } else if (this.imageId == 3) {
-                var requireModule = require.context(
-                    '../assets/im/image-3',
-                    false,
-                    /\.jpg$/
-                );
-            } else if (this.imageId == 4) {
-                var requireModule = require.context(
-                    '../assets/im/image-4',
-                    false,
-                    /\.jpg$/
-                );
-            } else if (this.imageId == 5) {
-                var requireModule = require.context(
-                    '../assets/im/image-5',
-                    false,
-                    /\.jpg$/
-                );
-            } else if (this.imageId == 6) {
-                var requireModule = require.context(
-                    '../assets/im/image-6',
-                    false,
-                    /\.jpg$/
-                );
-            } else if (this.imageId == 7) {
-                var requireModule = require.context(
-                    '../assets/im/image-7',
-                    false,
-                    /\.jpg$/
-                );
-            }
-            
-            console.info(requireModule);
-            for (var i = 0; i < requireModule.keys().length; i++) {
-                this.images.push(
-                    requireModule.keys()[i].substr(2, requireModule.keys()[i].length)
-                );
-            }
-        // },3000)
+        if (this.imageId == 1) {
+            var requireModule = require.context(
+                '../assets/im/image-1',
+                false,
+                /\.jpg$/
+            );
+        } else if (this.imageId == 2) {
+            var requireModule = require.context(
+                '../assets/im/image-2',
+                false,
+                /\.jpg$/
+            );
+        } else if (this.imageId == 3) {
+            var requireModule = require.context(
+                '../assets/im/image-3',
+                false,
+                /\.jpg$/
+            );
+        } else if (this.imageId == 4) {
+            var requireModule = require.context(
+                '../assets/im/image-4',
+                false,
+                /\.jpg$/
+            );
+        } else if (this.imageId == 5) {
+            var requireModule = require.context(
+                '../assets/im/image-5',
+                false,
+                /\.jpg$/
+            );
+        } else if (this.imageId == 6) {
+            var requireModule = require.context(
+                '../assets/im/image-6',
+                false,
+                /\.jpg$/
+            );
+        } else if (this.imageId == 7) {
+            var requireModule = require.context(
+                '../assets/im/image-7',
+                false,
+                /\.jpg$/
+            );
+        }
+        
+        console.info(requireModule);
+        for (var i = 0; i < requireModule.keys().length; i++) {
+            this.images.push(
+                requireModule.keys()[i].substr(2, requireModule.keys()[i].length)
+            );
+        }
         console.log('tupian',this.images)
         
         

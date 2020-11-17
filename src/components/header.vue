@@ -2,7 +2,7 @@
     <div>
         <div class="head">
             <div class="w1000">
-               <!-- <img src="../assets/logo.png" alt=""> -->
+               <img src="../assets/logo.png" alt="">
             </div>
             <div class="nav">
                 <div class="w1000">
