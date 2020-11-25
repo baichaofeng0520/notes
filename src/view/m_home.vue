@@ -1,6 +1,7 @@
 <template>
     <div>
         <my-header :index = 'num' @transmit = 'transmitData'></my-header>
+        <!-- <div class="teseImage"><img :src="'https://images.weserv.nl/?url='+ pythonImg.data[0][1]" alt="图片"></div> -->
         <!-- vue -->
         <div class="list-con w1000" v-if="receive == 1">
             <ul>
@@ -284,8 +285,104 @@
                 </li>
                 <li>
                     <p class="title">
+                        <span class="name">利用python＋opencv　读取视频的每一帧并保存</span>
+                        <a class="url" href="https://blog.csdn.net/weixin_45254641/article/details/99635339?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare" target="_blank">https://blog.csdn.net/weixin_45254641/article/details/99635339?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Could not find a version that satisfies the requirement PIL (from versions: ) No matching distributi</span>
+                        <a class="url" href="https://blog.csdn.net/yushuangping/article/details/82963839" target="_blank">https://blog.csdn.net/yushuangping/article/details/82963839</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">python人工智能使用pytesseract报错解决</span>
+                        <a class="url" href="https://www.jianshu.com/p/93ab58dea50f" target="_blank">https://www.jianshu.com/p/93ab58dea50f</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">https://github.com/lucasxlu/XCloud/tree/master/research/imgcensor</span>
+                        <a class="url" href="https://github.com/lucasxlu/XCloud/tree/master/research/imgcensor" target="_blank">https://github.com/lucasxlu/XCloud/tree/master/research/imgcensor</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">navicat for mysql 中文破解版（无需激活码）</span>
+                        <a class="url" href="https://www.cnblogs.com/yinfei/p/11427259.html" target="_blank">https://www.cnblogs.com/yinfei/p/11427259.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">安装MySQL</span>
+                        <a class="url" href="https://blog.csdn.net/bobo553443/article/details/81383194" target="_blank">https://blog.csdn.net/bobo553443/article/details/81383194</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">安装MySQL</span>
+                        <a class="url" href="https://blog.csdn.net/bobo553443/article/details/81383194" target="_blank">https://blog.csdn.net/bobo553443/article/details/81383194</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">解决'mysql' 不是内部或外部命令，也不是可运行的程序 或批处理文件。</span>
+                        <a class="url" href="https://blog.csdn.net/weixin_41653813/article/details/103500069" target="_blank">https://blog.csdn.net/weixin_41653813/article/details/103500069</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">python连接MySql数据库</span>
+                        <a class="url" href="https://www.cnblogs.com/yuhou/p/10893056.html" target="_blank">https://www.cnblogs.com/yuhou/p/10893056.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">mysql修改时区的几种方法</span>
+                        <a class="url" href="https://www.cnblogs.com/shiqiangqiang/p/8393662.html" target="_blank">https://www.cnblogs.com/shiqiangqiang/p/8393662.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">navicat破解版</span>
+                        <a class="url" href="http://www.ddooo.com/softdown/59996.htm" target="_blank">http://www.ddooo.com/softdown/59996.htm</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">安装了navicat 和 mysql，结果最后在navicat中连接mysql时：1251-Client does not support authentication protocol requested by server; consider upgrading MySQL client</span>
+                        <a class="url" href="https://www.cnblogs.com/wangjiaolong/p/12048081.html" target="_blank">https://www.cnblogs.com/wangjiaolong/p/12048081.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
                         <span class="name"></span>
-                        <a class="url" href="" target="_blank"></a>
+                        <a class="url" href="http://t1.zngirls.com" target="_blank"></a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Python 网络爬虫的常用库汇总</span>
+                        <a class="url" href="https://www.cnblogs.com/shiyanlou/p/11504767.html" target="_blank">https://www.cnblogs.com/shiyanlou/p/11504767.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">用python几行代码爬取秀美图上图片（福利）</span>
+                        <a class="url" href="https://blog.csdn.net/Stone173/article/details/105499258/?utm_medium=distribute.pc_relevant.none-task-blog-title-2&spm=1001.2101.3001.4242" target="_blank">https://blog.csdn.net/Stone173/article/details/105499258/?utm_medium=distribute.pc_relevant.none-task-blog-title-2&spm=1001.2101.3001.4242</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">爬取美女图片【绝对福利】</span>
+                        <a class="url" href="https://blog.csdn.net/qq_41859277/article/details/83018816?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control" target="_blank">https://blog.csdn.net/qq_41859277/article/details/83018816?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">爬虫爬取图片（女生切勿点开）</span>
+                        <a class="url" href="https://blog.csdn.net/wangziyang777/article/details/89074742?utm_medium=distribute.wap_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.wap_blog_relevant_pic&depth_1-utm_source=distribute.wap_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.wap_blog_relevant_pic" target="_blank">https://blog.csdn.net/wangziyang777/article/details/89074742?utm_medium=distribute.wap_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.wap_blog_relevant_pic&depth_1-utm_source=distribute.wap_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.wap_blog_relevant_pic</a>
                     </p>
                 </li>
                 <li>
@@ -331,12 +428,12 @@
                         <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-3',id: '3'}}">image-3</router-link>
                     </p>
                 </li>
-                <!-- <li>
+                <li>
                     <p class="title">
                         <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-4',id: '4'}}">image-4</router-link>
                     </p>
-                </li> -->
-                <!-- <li>
+                </li>
+                <li>
                     <p class="title">
                         <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-5',id: '5'}}">image-5</router-link>
                     </p>
@@ -350,7 +447,7 @@
                     <p class="title">
                         <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-7',id: '7'}}">image-7</router-link>
                     </p>
-                </li> -->
+                </li>
             </ul>
         </div>
     </div>
@@ -361,11 +458,12 @@
 import myHeader from '../components/m_header';
 
 export default {
-    props: {
+    props: { 
 
     },
     data() {
         return {
+            pythonImg: '',
             num: 11,//父组件传递给子组件的数据
             receive: 1,//子组件传递给父组件的数据
             videoUrl: [
@@ -401,7 +499,9 @@ export default {
         console.log('数组长度-1', this.Arr)
         console.log('数组长度-2', this.videoUrl.length)
 
-        this.getdata()
+        // this.getdata()
+
+        // this.getPythonData()
     },
     watch: {
 
@@ -429,6 +529,16 @@ export default {
                 }
             }
         },
+
+        // getPythonData() {
+        //     this.$ajax.get('http://127.0.0.1:6060/api?id=8').then((res)=>{
+        //         console.log('请求python数据',res.data)
+        //         this.pythonImg = res.data
+        //         console.log('python', this.pythonImg.data[0][1])
+        //     }).catch((error)=>{
+        //         console.log(error)
+        //     })
+        // }
     },
     components: {
         myHeader
@@ -450,4 +560,6 @@ export default {
 .video-box ul li p.name {font-size: 0.3rem;color: #999999;margin-top: 0.1rem;font-weight: bold;}
 .video-box ul li p.title {height: 3rem;display: flex;align-items: center;justify-content: center;overflow: hidden;box-sizing: border-box;border: 1px solid #e6e6e6;}
 .w1000 {width: 100%}
+.teseImage {width: 100%;}
+.teseImage img {max-width: 100%;}
 </style>

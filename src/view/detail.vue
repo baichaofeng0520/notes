@@ -795,8 +795,11 @@
             <!-- <blockquote v-for="(item,index) in images" :key="index">
                 <img :src="require('../assets/im/image-1/'+item +'')" alt="">
             </blockquote> -->
-            <viewer class="viewer" :images="images">
+            <viewer class="viewer" :images="images" v-if="imageId == 1 || imageId == 2 || imageId == 3">
                 <img v-for="(src,index) in images" :src="require('../assets/im/image-'+ imageId +'/'+src+'')" :key="index"/> 
+            </viewer>
+             <viewer class="viewer" :images="images" v-else>
+                <img v-for="(src,index) in images" :src="src" :key="index"/>
             </viewer>
         </div>
     </div>
@@ -895,6 +898,7 @@ export default {
         //     document.getElementById('list-con').style.borderColor = this.arrColor[this.n]
         //     this.n++
         // }, 2500);
+        this.getPythonData()
 
         //判断文件夹中的图片数量
         if (this.imageId == 1) {
@@ -1000,6 +1004,16 @@ export default {
                 console.log('接口返回数据',res)
                 console.log('后台返回数据',res.data)
             });
+        },
+        getPythonData() {
+            this.$ajax.get('http://127.0.0.1:6060/api?id='+ this.imageId).then((res)=>{
+                console.log('请求python数据',res.data)
+                this.images = res.data.data
+                // this.pythonImg = res.data
+                // console.log('python', this.pythonImg.data[0][1])
+            }).catch((error)=>{
+                console.log(error)
+            })
         }
     },
     components: {
