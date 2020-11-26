@@ -866,6 +866,10 @@ export default {
     mounted() {
         this.followDoctor()
         
+        if (this.imageId) {
+            this.getPythonData()
+        }
+        
         this.index = this.$route.query.index
         console.log('获取路由传递过来的参数',this.$route.query.index)
         console.log('获取路由传递过来的参数',this.$route.query.title)
@@ -898,7 +902,7 @@ export default {
         //     document.getElementById('list-con').style.borderColor = this.arrColor[this.n]
         //     this.n++
         // }, 2500);
-        this.getPythonData()
+       
 
         //判断文件夹中的图片数量
         if (this.imageId == 1) {
@@ -920,32 +924,6 @@ export default {
                 /\.jpg$/
             );
         } 
-        // else if (this.imageId == 4) {
-        //     var requireModule = require.context(
-        //         '../assets/im/image-4',
-        //         false,
-        //         /\.jpg$/
-        //     );
-        // } 
-        // else if (this.imageId == 5) {
-        //     var requireModule = require.context(
-        //         '../assets/im/image-5',
-        //         false,
-        //         /\.jpg$/
-        //     );
-        // } else if (this.imageId == 6) {
-        //     var requireModule = require.context(
-        //         '../assets/im/image-6',
-        //         false,
-        //         /\.jpg$/
-        //     );
-        // } else if (this.imageId == 7) {
-        //     var requireModule = require.context(
-        //         '../assets/im/image-7',
-        //         false,
-        //         /\.jpg$/
-        //     );
-        // }
         
         console.info(requireModule);
         for (var i = 0; i < requireModule.keys().length; i++) {
@@ -1006,7 +984,7 @@ export default {
             });
         },
         getPythonData() {
-            this.$ajax.get('http://127.0.0.1:6060/api?id='+ this.imageId).then((res)=>{
+            this.$ajax.get('http://192.168.1.144:6060/api?id='+ this.imageId).then((res)=>{
                 console.log('请求python数据',res.data)
                 this.images = res.data.data
                 // this.pythonImg = res.data

@@ -413,12 +413,15 @@
         <!-- 美图 -->
         <div class="list-con w1000" v-if="receive == 9">
             <ul>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-1',id: '1'}}">image-1</router-link>
-                    </p>
-                </li>
-                <li>
+                <block v-for="(item,index) in imageArr" :key="index">
+                    <li>
+                        <p class="title">
+                            <router-link :to ="{path:'/detail',query:{index:'image-1',title: item.title,id: item.id}}">{{item.name}}</router-link>
+                        </p>
+                    </li>
+                </block>
+                
+                <!-- <li>
                     <p class="title">
                         <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-2',id: '2'}}">image-2</router-link>
                     </p>
@@ -447,7 +450,7 @@
                     <p class="title">
                         <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-7',id: '7'}}">image-7</router-link>
                     </p>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
@@ -473,7 +476,10 @@ export default {
                 {url: 'https://test.yocoolnet.in/files/mp4/t/9/N/t9NAw.m3u8',title: '视频-3',id: 4},
                 {url: 'https://test.yocoolnet.in/files/mp4/V/6/F/V6FKO.m3u8',title: '视频-4',id: 5},
                 ],
-            Arr: []
+            Arr: [],
+            imageArr: [
+                {name:'image-1',id: 1,title: '图册-1'},{name:'image-2',id: 2,title: '图册-2'},{name:'image-3',id: 3,title: '图册-3'},{name:'image-4',id: 4,title: '图册-4'},{name:'image-5',id: 5,title: '图册-5'},{name:'image-6',id: 6,title: '图册-6'},{name:'image-7',id: 7,title: '图册-7'},{name:'image-8',id: 8,title: '图册-8'},{name:'image-9',id: 9,title: '图册-9'},{name:'image-10',id: 10,title: '图册-10'},{name:'image-11',id: 11,title: '图册-11'}
+            ]
         };
     },
     computed: {
@@ -502,6 +508,8 @@ export default {
         // this.getdata()
 
         // this.getPythonData()
+        console.log('ip地址',localStorage.getItem('Ip'))
+        console.log('ip地址',localStorage.getItem('cityname'))
     },
     watch: {
 
@@ -551,6 +559,7 @@ export default {
 .list-con li {padding: .3rem 0;border-bottom: 1px solid #eeeeee;}
 .list-con li:last-child {margin-bottom: 0;border-bottom: 0;}
 .list-con li p.title {font-size: .3rem;font-weight: bold;color: #333333;margin-bottom: .1rem;cursor: pointer;}
+.list-con li p.title .name {width: 100%;}
 .list-con li p.title img {max-width: 2rem;}
 .list-con li p.title a {color: #55aaff;word-break: break-word;}
 .list-con li p.title:hover {color: #d72b00;}
