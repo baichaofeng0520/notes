@@ -387,6 +387,90 @@
                 </li>
                 <li>
                     <p class="title">
+                        <span class="name">爬取图片不对被反扒解决办法</span>
+                        <a class="url" href="https://blog.csdn.net/Sudley/article/details/91405273" target="_blank">https://blog.csdn.net/Sudley/article/details/91405273</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">python爬虫遇到requests.exceptions.ConnectionError: HTTPSConnectionPool（host=...............port=443）解决方法</span>
+                        <a class="url" href="https://blog.csdn.net/weixin_44695605/article/details/107347666" target="_blank">https://blog.csdn.net/weixin_44695605/article/details/107347666</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">python爬虫遇到IP被封的情况，怎么办？</span>
+                        <a class="url" href="https://blog.csdn.net/wulishinian/article/details/102958687" target="_blank">https://blog.csdn.net/wulishinian/article/details/102958687</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">避免网络爬虫IP被封的策略</span>
+                        <a class="url" href="https://www.cnblogs.com/wkfvawl/p/11831526.html" target="_blank">https://www.cnblogs.com/wkfvawl/p/11831526.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Python使用代理的方法</span>
+                        <a class="url" href="https://www.cnblogs.com/yuxuanlian/p/10139659.html" target="_blank">https://www.cnblogs.com/yuxuanlian/p/10139659.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">正在查看:Python爬虫Scrapy爬取妹子图网站图片抓取 - 在线Scrapy爬虫生成测试</span>
+                        <a class="url" href="https://www.toolnb.com/dev/Scrapy/a26bec7f2e7ae4491837451f1283ed4d.html" target="_blank">https://www.toolnb.com/dev/Scrapy/a26bec7f2e7ae4491837451f1283ed4d.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">爬取妹子图</span>
+                        <a class="url" href="https://blog.csdn.net/wzyaiwl/article/details/81568975?utm_source=blogxgwz1" target="_blank">https://blog.csdn.net/wzyaiwl/article/details/81568975?utm_source=blogxgwz1</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Python协程爬取妹子图(内有福利，你懂得~)</span>
+                        <a class="url" href="https://www.cnblogs.com/demon89/p/7631656.html" target="_blank">https://www.cnblogs.com/demon89/p/7631656.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">关于网页referer以及破解referer反爬虫的办法</span>
+                        <a class="url" href="https://blog.csdn.net/python_neophyte/article/details/82562330" target="_blank">https://blog.csdn.net/python_neophyte/article/details/82562330</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">win7防火墙无法设置解决</span>
+                        <a class="url" href="https://jingyan.baidu.com/article/c74d600094bf360f6a595dc4.html" target="_blank">https://jingyan.baidu.com/article/c74d600094bf360f6a595dc4.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">jQuery拖拽插件drag.js</span>
+                        <a class="url" href="https://www.jq22.com/yanshi5844" target="_blank">https://www.jq22.com/yanshi5844</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name"></span>
+                        <a class="url" href="" target="_blank"></a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name"></span>
+                        <a class="url" href="" target="_blank"></a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name"></span>
+                        <a class="url" href="" target="_blank"></a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
                         <span class="name"></span>
                         <a class="url" href="" target="_blank"></a>
                     </p>
@@ -416,41 +500,10 @@
                 <block v-for="(item,index) in imageArr" :key="index">
                     <li>
                         <p class="title">
-                            <router-link :to ="{path:'/detail',query:{index:'image-1',title: item.title,id: item.id}}">{{item.name}}</router-link>
+                            <router-link :to ="{path:'/detail',query:{index:'image-1',title: item.title,id: item.id,name_id: item.name_id}}">{{item.name}}</router-link>
                         </p>
                     </li>
                 </block>
-                
-                <!-- <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-2',id: '2'}}">image-2</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-3',id: '3'}}">image-3</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-4',id: '4'}}">image-4</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-5',id: '5'}}">image-5</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-6',id: '6'}}">image-6</router-link>
-                    </p>
-                </li>
-                <li>
-                    <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'image-1',title:'张-7',id: '7'}}">image-7</router-link>
-                    </p>
-                </li> -->
             </ul>
         </div>
     </div>
@@ -478,7 +531,22 @@ export default {
                 ],
             Arr: [],
             imageArr: [
-                {name:'image-1',id: 1,title: '图册-1'},{name:'image-2',id: 2,title: '图册-2'},{name:'image-3',id: 3,title: '图册-3'},{name:'image-4',id: 4,title: '图册-4'},{name:'image-5',id: 5,title: '图册-5'},{name:'image-6',id: 6,title: '图册-6'},{name:'image-7',id: 7,title: '图册-7'},{name:'image-8',id: 8,title: '图册-8'},{name:'image-9',id: 9,title: '图册-9'},{name:'image-10',id: 10,title: '图册-10'},{name:'image-11',id: 11,title: '图册-11'}
+                {name:'image-1',id: 1,title: '图册-1',name_id: 189574},
+                {name:'image-2',id: 2,title: '图册-2',name_id: 164018},
+                {name:'image-3',id: 3,title: '图册-3',name_id: 85012},
+                {name:'image-4',id: 4,title: '图册-4',name_id: 226142},
+                {name:'image-5',id: 5,title: '图册-5',name_id: 53115},
+                {name:'image-6',id: 6,title: '图册-6',name_id: 41864},
+                {name:'image-7',id: 7,title: '图册-7',name_id: 211343},
+                {name:'image-8',id: 8,title: '图册-8',name_id: 178073},
+                {name:'image-9',id: 9,title: '图册-9',name_id: 121905},
+                {name:'image-10',id: 10,title: '图册-10',name_id: 78208},
+                {name:'image-11',id: 11,title: '图册-11',name_id: 87580},
+                {name:'image-12',id: 12,title: '图册-12',name_id: 67955},
+                {name:'image-13',id: 13,title: '图册-13',name_id: 91684},
+                {name:'image-14',id: 14,title: '图册-14',name_id: 210950},
+                {name:'image-15',id: 15,title: '图册-15',name_id: 149728},
+                {name:'image-16',id: 16,title: '图册-16',name_id: 188269},
             ]
         };
     },

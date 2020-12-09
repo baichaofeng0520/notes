@@ -798,8 +798,8 @@
             <viewer class="viewer" :images="images" v-if="imageId == 1 || imageId == 2 || imageId == 3">
                 <img v-for="(src,index) in images" :src="require('../assets/im/image-'+ imageId +'/'+src+'')" :key="index"/> 
             </viewer>
-             <viewer class="viewer" :images="images" v-else>
-                <img v-for="(src,index) in images" :src="src" :key="index"/>
+            <viewer class="viewer" :images="images" v-else>
+                <img v-for="(src,index) in images" :src="src[0]" :key="index"/>
             </viewer>
         </div>
     </div>
@@ -984,11 +984,9 @@ export default {
             });
         },
         getPythonData() {
-            this.$ajax.get('http://192.168.1.144:6060/api?id='+ this.imageId).then((res)=>{
+            this.$ajax.get('http://127.0.0.1:2020/api?id='+ this.imageId + '&name_id=' + this.$route.query.name_id).then((res)=>{
                 console.log('请求python数据',res.data)
                 this.images = res.data.data
-                // this.pythonImg = res.data
-                // console.log('python', this.pythonImg.data[0][1])
             }).catch((error)=>{
                 console.log(error)
             })
