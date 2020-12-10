@@ -454,6 +454,30 @@
                 <li>
                     <p class="title">
                         <span class="name"></span>
+                        <a class="url" href="https://wqinf.com/archives/56" target="_blank">https://wqinf.com/archives/56</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">如何使用Xshell连接阿里云服务器</span>
+                        <a class="url" href="https://www.cnblogs.com/Guorisy/p/12445224.html" target="_blank">https://www.cnblogs.com/Guorisy/p/12445224.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">python爬虫学习笔记(十一)-数据提取之PyQuery的使用</span>
+                        <a class="url" href="https://www.cnblogs.com/thresh/p/12953605.html" target="_blank">https://www.cnblogs.com/thresh/p/12953605.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">网站使用微信登录</span>
+                        <a class="url" href="https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html" target="_blank">https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name"></span>
                         <a class="url" href="" target="_blank"></a>
                     </p>
                 </li>

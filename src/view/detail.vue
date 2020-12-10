@@ -867,7 +867,8 @@ export default {
         this.followDoctor()
         
         if (this.imageId) {
-            this.getPythonData()
+            // this.getPythonData()
+            this.getimage()
         }
         
         this.index = this.$route.query.index
@@ -990,6 +991,15 @@ export default {
             }).catch((error)=>{
                 console.log(error)
             })
+        },
+        getimage() {
+           this.$ajax.get('http://47.107.115.52/image/').then((res)=>{
+                // console.log('请求python数据',res.data)
+                // this.images = res.data.data
+                this.images = res
+            }).catch((error)=>{
+                console.log(error)
+            }) 
         }
     },
     components: {
