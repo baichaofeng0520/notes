@@ -799,7 +799,7 @@
                 <img v-for="(src,index) in images" :src="require('../assets/im/image-'+ imageId +'/'+src+'')" :key="index"/> 
             </viewer>
             <viewer class="viewer" :images="images" v-else>
-                <img v-for="(src,index) in images" :src="src[0]" :key="index"/>
+                <img v-for="(src,index) in images" :src="src.img" :key="index"/>
             </viewer>
         </div>
     </div>
@@ -984,6 +984,7 @@ export default {
                 console.log('后台返回数据',res.data)
             });
         },
+        /* 本地flask */
         getPythonData() {
             this.$ajax.get('http://127.0.0.1:2020/api?id='+ this.imageId + '&name_id=' + this.$route.query.name_id).then((res)=>{
                 console.log('请求python数据',res.data)
@@ -992,11 +993,12 @@ export default {
                 console.log(error)
             })
         },
+        /* 服务器flask */
         getimage() {
-           this.$ajax.get('http://47.107.115.52/image/').then((res)=>{
-                // console.log('请求python数据',res.data)
+           this.$ajax.get('http://47.107.115.52:80/api?id=' + this.imageId).then((res)=>{
+                console.log('请求python数据',res.data.data)
                 // this.images = res.data.data
-                this.images = res
+                this.images = res.data.data
             }).catch((error)=>{
                 console.log(error)
             }) 

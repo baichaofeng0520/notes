@@ -477,14 +477,38 @@
                 </li>
                 <li>
                     <p class="title">
-                        <span class="name"></span>
-                        <a class="url" href="" target="_blank"></a>
+                        <span class="name">阿里云CentOS安装Apache服务器</span>
+                        <a class="url" href="https://www.cnblogs.com/hantangtouzi/p/11757896.html" target="_blank">https://www.cnblogs.com/hantangtouzi/p/11757896.html</a>
                     </p>
                 </li>
                 <li>
                     <p class="title">
-                        <span class="name"></span>
-                        <a class="url" href="" target="_blank"></a>
+                        <span class="name">win命令行ssh连接阿里云服务器连接不上解决办法</span>
+                        <a class="url" href="https://blog.csdn.net/watsy/article/details/12611919" target="_blank">https://blog.csdn.net/watsy/article/details/12611919</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">CentOS7部署Flask(Apache、mod_wsgi、Python36、venv)</span>
+                        <a class="url" href="https://www.jb51.net/article/153875.htm" target="_blank">https://www.jb51.net/article/153875.htm</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">linux下通过pip安装最新uwsgi (安装mod_wsgi报错解决办法)</span>
+                        <a class="url" href="https://blog.csdn.net/feinifi/article/details/79354115" target="_blank">https://blog.csdn.net/feinifi/article/details/79354115</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Flask入门系列(五)–错误处理及消息闪现</span>
+                        <a class="url" href="http://www.bjhee.com/flask-5.html" target="_blank">http://www.bjhee.com/flask-5.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Python3.6简单的操作Mysql数据库的三个实例</span>
+                        <a class="url" href="https://www.jb51.net/article/149048.htm" target="_blank">https://www.jb51.net/article/149048.htm</a>
                     </p>
                 </li>
                 <li>
@@ -583,7 +607,8 @@ export default {
                 {name:'image-14',id: 14,title: '图册-14',name_id: 210950},
                 {name:'image-15',id: 15,title: '图册-15',name_id: 149728},
                 {name:'image-16',id: 16,title: '图册-16',name_id: 188269},
-            ]
+            ],
+            immmm: 'http://47.107.115.52:80/image/80.jpg'
         };
     },
     computed: {
@@ -614,6 +639,9 @@ export default {
         // this.getPythonData()
         console.log('ip地址',localStorage.getItem('Ip'))
         console.log('ip地址',localStorage.getItem('cityname'))
+        
+        // var immm =
+        console.log('来自服务器的图片',this.immmm)
     },
     watch: {
 
