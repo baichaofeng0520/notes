@@ -985,19 +985,18 @@ export default {
             });
         },
         /* 本地flask */
-        getPythonData() {
-            this.$ajax.get('http://127.0.0.1:2020/api?id='+ this.imageId + '&name_id=' + this.$route.query.name_id).then((res)=>{
-                console.log('请求python数据',res.data)
-                this.images = res.data.data
-            }).catch((error)=>{
-                console.log(error)
-            })
-        },
+        // getPythonData() {
+        //     this.$ajax.get('http://127.0.0.1:2020/api?id='+ this.imageId + '&name_id=' + this.$route.query.name_id).then((res)=>{
+        //         console.log('请求python数据',res.data)
+        //         this.images = res.data.data
+        //     }).catch((error)=>{
+        //         console.log(error)
+        //     })
+        // },
         /* 服务器flask */
         getimage() {
            this.$ajax.get('http://47.107.115.52:80/api?id=' + this.imageId).then((res)=>{
                 console.log('请求python数据',res.data.data)
-                // this.images = res.data.data
                 this.images = res.data.data
             }).catch((error)=>{
                 console.log(error)

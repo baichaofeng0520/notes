@@ -1,20 +1,20 @@
 <template>
     <div>
         <div class="head">
-            <!-- <div class="w1000"> -->
-                <!-- <div class="swiper-container">
+            <div class="w1000">
+                <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"><router-link :to ="{path:'/detail',query:{index:'m-1',title:'1',url:'https://test.yocoolnet.in/files/mp4/x/A/J/xAJFK.m3u8'}}"><img :src="require('../assets/img/1.jpg')" alt=""></router-link></div>
                         <div class="swiper-slide"><router-link :to ="{path:'/detail',query:{index:'m-1',title:'2',url:'https://test.yocoolnet.in/files/mp4/Z/5/F/Z5FWT.m3u8'}}"><img :src="require('../assets/img/2.jpg')" alt=""></router-link></div>
                         <div class="swiper-slide"><router-link :to ="{path:'/detail',query:{index:'m-1',title:'3',url:'https://cdn.letv-cdn.com/2018/12/05/JOCeEEUuoteFrjCg/playlist.m3u8'}}"><img :src="require('../assets/img/3.jpg')" alt=""></router-link></div>
                         <div class="swiper-slide"><router-link :to ="{path:'/detail',query:{index:'m-1',title:'4',url:'https://test.yocoolnet.in/files/mp4/t/9/N/t9NAw.m3u8'}}"><img :src="require('../assets/img/4.jpg')" alt=""></router-link></div>
                         <div class="swiper-slide"><router-link :to ="{path:'/detail',query:{index:'m-1',title:'5',url:'https://test.yocoolnet.in/files/mp4/V/6/F/V6FKO.m3u8'}}"><img :src="require('../assets/img/5.jpg')" alt=""></router-link></div>
-                    </div> -->
+                    </div>
                     <!-- 如果需要分页器 -->
-                    <!-- <div class="swiper-pagination"></div>
-                </div> -->
+                    <div class="swiper-pagination"></div>
+                </div>
                <!-- <img src="../assets/logo.png" alt=""> -->
-            <!-- </div> -->
+            </div>
             <div class="nav">
                 <div class="w1000">
                     <ul>
