@@ -865,7 +865,7 @@ export default {
     //一般用来向后端发起请求，拿到数据后做一些业务处理。该函数在模版渲染完成后才被调用。DOM操作一般是在mounted钩子函数中进行。
     mounted() {
         this.followDoctor()
-        
+        console.log('imageId',this.$route.query.id)
         if (this.imageId) {
             // this.getPythonData()
             this.getimage()
@@ -991,7 +991,7 @@ export default {
         //         this.images = res.data.data
         //     }).catch((error)=>{
         //         console.log(error)
-        //     })
+        //     })   systemctl restart httpd.service systemctl restart httpd.service  systemctl restart httpd.service systemctl restart httpd.service
         // },
         /* 服务器flask */
         getimage() {

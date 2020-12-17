@@ -513,8 +513,8 @@
                 </li>
                 <li>
                     <p class="title">
-                        <span class="name"></span>
-                        <a class="url" href="" target="_blank"></a>
+                        <span class="name">css3实现3D效果</span>
+                        <a class="url" href="https://www.jq22.com/webqd5827" target="_blank">https://www.jq22.com/webqd5827</a>
                     </p>
                 </li>
                 <li>
@@ -555,12 +555,12 @@
             </ul>
         </div>
         <!-- 美图 -->
-        <div class="list-con w1000" v-if="receive == 9">
+        <div class="list-con w1000 imagetitle" v-if="receive == 9">
             <ul>
-                <block v-for="(item,index) in imageArr" :key="index">
+                <block v-for="(item,index) in imageTitle" :key="index">
                     <li>
                         <p class="title">
-                            <router-link :to ="{path:'/detail',query:{index:'image-1',title: item.title,id: item.id,name_id: item.name_id}}">{{item.name}}</router-link>
+                            <router-link :to ="{path:'/detail',query:{index: 'image-1',title: item.title,id: item.id}}">{{item.title}}</router-link>
                         </p>
                     </li>
                 </block>
@@ -588,7 +588,7 @@ export default {
                 {url: 'https://cdn.letv-cdn.com/2018/12/05/JOCeEEUuoteFrjCg/playlist.m3u8',title: '毒液',id: 3},
                 {url: 'https://test.yocoolnet.in/files/mp4/t/9/N/t9NAw.m3u8',title: '视频-3',id: 4},
                 {url: 'https://test.yocoolnet.in/files/mp4/V/6/F/V6FKO.m3u8',title: '视频-4',id: 5},
-                ],
+            ],
             Arr: [],
             imageArr: [
                 {name:'image-1',id: 1,title: '图册-1',name_id: 189574},
@@ -606,9 +606,9 @@ export default {
                 {name:'image-13',id: 13,title: '图册-13',name_id: 91684},
                 {name:'image-14',id: 14,title: '图册-14',name_id: 210950},
                 {name:'image-15',id: 15,title: '图册-15',name_id: 149728},
-                {name:'image-16',id: 16,title: '图册-16',name_id: 188269},
+                {name:'image-16',id: 16,title: '图册-16',name_id: 188269}
             ],
-            immmm: 'http://47.107.115.52:80/image/80.jpg'
+            imageTitle: []
         };
     },
     computed: {
@@ -636,12 +636,9 @@ export default {
 
         // this.getdata()
 
-        // this.getPythonData()
-        console.log('ip地址',localStorage.getItem('Ip'))
-        console.log('ip地址',localStorage.getItem('cityname'))
-        
-        // var immm =
-        console.log('来自服务器的图片',this.immmm)
+        this.getImageTitle()
+        // console.log('ip地址',localStorage.getItem('Ip'))
+        // console.log('ip地址',localStorage.getItem('cityname'))
     },
     watch: {
 
@@ -670,15 +667,14 @@ export default {
             }
         },
 
-        // getPythonData() {
-        //     this.$ajax.get('http://127.0.0.1:6060/api?id=8').then((res)=>{
-        //         console.log('请求python数据',res.data)
-        //         this.pythonImg = res.data
-        //         console.log('python', this.pythonImg.data[0][1])
-        //     }).catch((error)=>{
-        //         console.log(error)
-        //     })
-        // }
+        getImageTitle() {
+            this.$ajax.get('http://47.107.115.52:80/getImageTitle').then((res)=>{
+                console.log('请求python数据',res.data.data)
+                this.imageTitle = res.data.data
+            }).catch((error)=>{
+                console.log(error)
+            })
+        }
     },
     components: {
         myHeader
@@ -700,6 +696,11 @@ export default {
 .video-box ul li {text-align: center;margin-right: 0.39rem;padding: 0;}
 .video-box ul li p.name {font-size: 0.3rem;color: #999999;margin-top: 0.1rem;font-weight: bold;}
 .video-box ul li p.title {height: 3rem;display: flex;align-items: center;justify-content: center;overflow: hidden;box-sizing: border-box;border: 1px solid #e6e6e6;}
+.imagetitle {width: 100%;}
+.imagetitle ul {width: 100%;display: flex;align-items: center;flex-wrap: wrap;justify-content: space-between;}
+.imagetitle ul li {display: flex;align-items: center;justify-content: center;width: 2rem;height: 2rem;border-radius: 100%;background: url('https://p1.plmn5.com/uploadfile/202012/7/D519359518.jpg')no-repeat;box-shadow: #ccc 0px 0px .1rem;padding: 0;word-break: break-all;margin-bottom: .3rem!important;background-size: 100% 100%;overflow: hidden;}
+.imagetitle ul li p {width: 100%;text-align: center;}
+.imagetitle ul li p a {color: #333333!important;word-break: break-all;}
 .w1000 {width: 100%}
 .teseImage {width: 100%;}
 .teseImage img {max-width: 100%;}
