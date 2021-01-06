@@ -11,11 +11,34 @@ export default {
   mounted() {
     if (this._isMobile()) {
       // alert("手机端");
-      this.$router.replace(/* '/m_home' */'/m_home');
+      this.$router.replace(/* '/m_home' */'/login');
     } else {
       // alert("pc端");
       this.$router.replace('/pc_home');
     };
+    
+    //缓存中没有用户信息，清空登录记录
+    if(sessionStorage.getItem('checkLogin') == '') {
+      this.$ajax.get(
+        "http://47.107.115.52:80/clearLogin"
+      ).then((res) => {
+        console.log("用户数据", res);
+      }).catch((error) => {
+        console.log(error);
+      });
+    }
+
+
+    this.$ajax.get(
+      "http://47.107.115.52:80/checkLogin?user_name=" + sessionStorage.getItem('checkLogin')
+    ).then((res) => {
+      console.log("用户数据", res);
+      if (res.data.status == 1) {
+        this.$router.push({path: '/m_home'});
+      }
+    }).catch((error) => {
+      console.log(error);
+    });
   },
   methods: {
     _isMobile() {
@@ -70,6 +93,11 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #a
 input:-moz-placeholder, textarea:-moz-placeholder {color:#a39f9f;}
 input::-moz-placeholder, textarea::-moz-placeholder {color:#a39f9f;}
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {color:#a39f9f;}
+
+.my-gallery {display: flex;align-items: center;flex-wrap: wrap;justify-content: space-between;}
+figure {margin: 0;padding: 0;}
+figure img {width: 3.3rem;margin-bottom: .3rem;transform:translateZ(0);}
+.pswp img {transform:translateZ(0);height: auto!important;}
 
 @media screen and (max-width: 321px) {
     body {

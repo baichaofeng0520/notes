@@ -4,6 +4,8 @@ import Router from 'vue-router'
 import pc_home from '../view/pc_home.vue'
 import m_home from '../view/m_home.vue'
 import Detail from '../view/detail.vue'
+import Login from '../view/login.vue'
+import register from '../view/register.vue'
 
 Vue.use(Router)
 
@@ -12,8 +14,13 @@ export default new Router({
   routes: [
     // {
     //   path: '',
-    //   redirect: '/pc_home'
+    //   redirect: '/login'
     // },
+    {
+      path: '/register',
+      name: 'register',
+      component: register
+    },
     {
       path: '/pc_home',
       name: 'pc_home',
@@ -28,6 +35,11 @@ export default new Router({
       path: '/detail',
       name: 'detail',
       component: Detail
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     },
   ]
 })

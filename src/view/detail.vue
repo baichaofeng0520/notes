@@ -610,18 +610,18 @@
         <!-- 视频 -->
         <div class="list-con w1000 mobile" id="list-con" v-if="index == 'm-1'">
             <!-- 基础video -->
-            <!-- <video :src="this.$route.query.url" controls="controls" autoplay="autoplay" width="100%">
-            </video> -->
+            <video :src="this.$route.query.url" controls="controls" autoplay="autoplay" width="100%">
+            </video>
             <!-- video.js播放 -->
             <!-- <video id="my-video" class="video-js vjs-default-skin box" controls preload="auto">
                 <source :src="this.$route.query.url" type="application/x-mpegURL"/>
             </video> -->
-            <video-player  class="video-player vjs-custom-skin"
+            <!-- <video-player  class="video-player vjs-custom-skin"
                 ref="videoPlayer" 
                 :playsinline="true" 
                 :options="playerOptions"
                 @play="onPlayerPlay($event)"
-            ></video-player>
+            ></video-player> -->
 
             <!-- 图片预览 -->
             <!--1、以组件的形式-->
@@ -791,16 +791,18 @@
             </div>
         </div>
         <!-- image show -->
-        <div class="list-con w1000" id="list-con" v-if="index == 'image-1'">
+        <div class="list-con w1000 img-show" id="list-con" v-if="index == 'image-1'">
             <!-- <blockquote v-for="(item,index) in images" :key="index">
                 <img :src="require('../assets/im/image-1/'+item +'')" alt="">
             </blockquote> -->
             <viewer class="viewer" :images="images" v-if="imageId == 1 || imageId == 2 || imageId == 3">
                 <img v-for="(src,index) in images" :src="require('../assets/im/image-'+ imageId +'/'+src+'')" :key="index"/> 
             </viewer>
-            <viewer class="viewer" :images="images" v-else>
+            <!-- <viewer class="viewer" :images="images" v-else>
                 <img v-for="(src,index) in images" :src="src.img" :key="index"/>
-            </viewer>
+            </viewer> -->
+
+            <vue-preview v-else :slides="images" @close="handleClose"></vue-preview>
         </div>
     </div>
 </template>
@@ -827,30 +829,30 @@ export default {
             photo: [require('../assets/img/1.jpg'),require('../assets/img/2.jpg'),require('../assets/img/3.jpg'),require('../assets/img/4.jpg'),require('../assets/img/5.jpg'),require('../assets/image/17.png')],
             images: [],
             imageId: this.$route.query.id,
-            playerOptions:{
-                playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
-                autoplay: true, //如果true,浏览器准备好时开始回放。
-                muted: false, // 默认情况下将会消除任何音频。
-                loop: false, // 导致视频一结束就重新开始。
-                preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
-                language: 'zh-CN',
-                aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
-                // fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
-                sources: [{
-                    type: "application/x-mpegURL",//这里的种类支持很多种：基本视频格式、直播、流媒体等，具体可以参看git网址项目
-                    src: this.$route.query.url //url地址
-                }],
-                hls:true, //如果是播放m3u8必须加（需注释掉techOrder,不然会有报错）
-                // techOrder: ['flash'], //播放rtmp必须加
-                poster: "", //你的封面地址
-                notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
-                controlBar: {
-                    timeDivider: true,
-                    durationDisplay: true,
-                    remainingTimeDisplay: false,
-                    fullscreenToggle: true  //全屏按钮
-                }
-            }
+            // playerOptions:{
+            //     playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
+            //     autoplay: true, //如果true,浏览器准备好时开始回放。
+            //     muted: false, // 默认情况下将会消除任何音频。
+            //     loop: false, // 导致视频一结束就重新开始。
+            //     preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+            //     language: 'zh-CN',
+            //     aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+            //     // fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+            //     sources: [{
+            //         type: "application/x-mpegURL",//这里的种类支持很多种：基本视频格式、直播、流媒体等，具体可以参看git网址项目
+            //         src: this.$route.query.url //url地址
+            //     }],
+            //     hls:true, //如果是播放m3u8必须加（需注释掉techOrder,不然会有报错）
+            //     // techOrder: ['flash'], //播放rtmp必须加
+            //     poster: "", //你的封面地址
+            //     notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+            //     controlBar: {
+            //         timeDivider: true,
+            //         durationDisplay: true,
+            //         remainingTimeDisplay: false,
+            //         fullscreenToggle: true  //全屏按钮
+            //     }
+            // }
         };
     },
     //是在DOM执行完成后立马执行（如：赋值）
@@ -931,9 +933,7 @@ export default {
             this.images.push(
                 requireModule.keys()[i].substr(2, requireModule.keys()[i].length)
             );
-        }
-        console.log('tupian',this.images)
-        
+        } 
         
     },
     //组件销毁之前执行
@@ -997,6 +997,12 @@ export default {
         getimage() {
            this.$ajax.get('http://47.107.115.52:80/api?id=' + this.imageId).then((res)=>{
                 console.log('请求python数据',res.data.data)
+                res.data.data.forEach(item => {
+                    item.w = 750;   //设置以大图浏览时的宽度
+                    item.h = 750;     //设置以大图浏览时的高度
+                    item.src = item.img;  //大图
+                    item.msrc = item.img;  //小图
+                }); 
                 this.images = res.data.data
             }).catch((error)=>{
                 console.log(error)
@@ -1038,6 +1044,7 @@ font-weight: bold;}
 video-player {width: 100%;}
 .viewer {display: flex;align-items: center;justify-content: space-between;width: 100%;overflow: hidden;overflow-x: auto;}
 .viewer img {max-width: 1rem;margin: 0 0.1rem;}
+
 
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;box-sizing: border-box;padding: .3rem;}

@@ -519,6 +519,42 @@
                 </li>
                 <li>
                     <p class="title">
+                        <span class="name">Python Selenium库的使用(控制浏览器滚动 webdriver)</span>
+                        <a class="url" href="https://blog.csdn.net/weixin_36279318/article/details/79475388" target="_blank">https://blog.csdn.net/weixin_36279318/article/details/79475388</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Flask框架重点知识总结回顾</span>
+                        <a class="url" href="https://cloud.tencent.com/developer/article/1465987" target="_blank">https://cloud.tencent.com/developer/article/1465987</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Python遍历字典dict的几种方法</span>
+                        <a class="url" href="https://www.cnblogs.com/Ivyli4258/p/8275021.html" target="_blank">https://www.cnblogs.com/Ivyli4258/p/8275021.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">网站应用微信登录开发指南</span>
+                        <a class="url" href="https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html" target="_blank">https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Python爬虫：整理selenium经常遇到的一些坑，无法定位元素、网站反爬虫监测、请求头、页面滚动，你要的可能都在这里</span>
+                        <a class="url" href="https://blog.csdn.net/weixin_43040873/article/details/109165637" target="_blank">https://blog.csdn.net/weixin_43040873/article/details/109165637</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name"></span>
+                        <a class="url" href="" target="_blank"></a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
                         <span class="name"></span>
                         <a class="url" href="" target="_blank"></a>
                     </p>

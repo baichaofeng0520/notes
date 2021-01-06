@@ -2,7 +2,10 @@
     <div>
         <div class="head">
             <div class="w1000">
-                <div class="swiper-container">
+                <!-- <embed type="application/x-shockwave-flash" src="http://cdn.abowman.com/widgets/hamster/hamster.swf" width="250" height="210" id="flashID" name="flashID" bgcolor="#FFFFFF" quality="high" flashvars="up_backgroundColor=FFFFFF" wmode="opaque" allowscriptaccess="always"> -->
+                <div height="120" width="150" align="center"><embed height="120" width="150" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.swf" quality="high" autostart="1" wmode="transparent"></div>
+                <!-- <iframe src="../../static/clock.html" frameborder="0" width="100%"></iframe> -->
+                <!-- <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"><router-link :to ="{path:'/detail',query:{index:'m-1',title:'1',url:'https://test.yocoolnet.in/files/mp4/x/A/J/xAJFK.m3u8'}}"><img :src="require('../assets/img/1.jpg')" alt=""></router-link></div>
                         <div class="swiper-slide"><router-link :to ="{path:'/detail',query:{index:'m-1',title:'2',url:'https://test.yocoolnet.in/files/mp4/Z/5/F/Z5FWT.m3u8'}}"><img :src="require('../assets/img/2.jpg')" alt=""></router-link></div>
@@ -10,10 +13,8 @@
                         <div class="swiper-slide"><router-link :to ="{path:'/detail',query:{index:'m-1',title:'4',url:'https://test.yocoolnet.in/files/mp4/t/9/N/t9NAw.m3u8'}}"><img :src="require('../assets/img/4.jpg')" alt=""></router-link></div>
                         <div class="swiper-slide"><router-link :to ="{path:'/detail',query:{index:'m-1',title:'5',url:'https://test.yocoolnet.in/files/mp4/V/6/F/V6FKO.m3u8'}}"><img :src="require('../assets/img/5.jpg')" alt=""></router-link></div>
                     </div>
-                    <!-- 如果需要分页器 -->
                     <div class="swiper-pagination"></div>
-                </div>
-               <!-- <img src="../assets/logo.png" alt=""> -->
+                </div> -->
             </div>
             <div class="nav">
                 <div class="w1000">
@@ -89,11 +90,12 @@ export default {
 <style scoped>
 .head {background: #ffffff;width: 100%}
 .w1000 {width: 100%}
-.head .nav {background: #379be9;height: .6rem;width: 100%;overflow: hidden;overflow-x: auto;}
+.head .nav {background: #379be9;height: .8rem;width: 100%;overflow: hidden;overflow-x: auto;}
 .head .nav ul {width: 100%;height: 100%;display: flex;align-items: center;justify-content: space-between;padding: 0 .2rem;}
-.head .nav ul span {color: #666666;font-size: .14rem;}
-.head .nav li {display: block;width: auto;height: 100%;text-align: center;color: #ffffff;font-weight: bold;font-size: .2rem;cursor: pointer;line-height: .6rem;}
+.head .nav ul span {color: #666666;font-size: .3rem;margin: 0 .2rem;}
+.head .nav li {display: block;width: auto;height: 100%;text-align: center;color: #ffffff;font-weight: bold;font-size: .3rem;cursor: pointer;line-height: .8rem;}
 .head .nav li:hover {color: #ff3344;}
+.head .nav li:active {color: #ff3344;}
 .head .swiper-container {width: 100%;height: 5rem;overflow: hidden;}
 .head .swiper-container .swiper-slide {display: flex;align-items: center;justify-content: center;}
 .head .swiper-container .swiper-slide img {max-width: 100%;}
