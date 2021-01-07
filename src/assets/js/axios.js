@@ -26,11 +26,11 @@ var HttpRequest = {
       }
     }).catch(() => {
       reject();
-      Toast({
-        message: "发生错误，请检查！",
-        position: "middle",
-        duration: 2000
-      });
+      // Toast({
+      //   message: "发生错误，请检查！",
+      //   position: "middle",
+      //   duration: 2000
+      // });
     })
   }
 };

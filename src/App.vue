@@ -26,19 +26,18 @@ export default {
       }).catch((error) => {
         console.log(error);
       });
+    } else {
+      this.$ajax.get(
+        "http://47.107.115.52:80/checkLogin?user_name=" + sessionStorage.getItem('checkLogin')
+      ).then((res) => {
+        console.log("用户数据", res);
+        if (res.data.status == 1) {
+          this.$router.push({path: '/m_home'});
+        }
+      }).catch((error) => {
+        console.log(error);
+      });
     }
-
-
-    this.$ajax.get(
-      "http://47.107.115.52:80/checkLogin?user_name=" + sessionStorage.getItem('checkLogin')
-    ).then((res) => {
-      console.log("用户数据", res);
-      if (res.data.status == 1) {
-        this.$router.push({path: '/m_home'});
-      }
-    }).catch((error) => {
-      console.log(error);
-    });
   },
   methods: {
     _isMobile() {
@@ -98,6 +97,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {color:#a39f9f;}
 figure {margin: 0;padding: 0;}
 figure img {width: 3.3rem;margin-bottom: .3rem;transform:translateZ(0);}
 .pswp img {transform:translateZ(0);height: auto!important;}
+.pswp__img, .pswp__item {top: -41!important;}
 
 @media screen and (max-width: 321px) {
     body {

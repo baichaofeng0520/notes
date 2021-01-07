@@ -3,8 +3,7 @@
         <div class="head">
             <div class="w1000">
                 <!-- <embed type="application/x-shockwave-flash" src="http://cdn.abowman.com/widgets/hamster/hamster.swf" width="250" height="210" id="flashID" name="flashID" bgcolor="#FFFFFF" quality="high" flashvars="up_backgroundColor=FFFFFF" wmode="opaque" allowscriptaccess="always"> -->
-                <div height="120" width="150" align="center"><embed height="120" width="150" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.swf" quality="high" autostart="1" wmode="transparent"></div>
-                <!-- <iframe src="../../static/clock.html" frameborder="0" width="100%"></iframe> -->
+                <iframe src="../../static/hamster.html" frameborder="0" width="100%"></iframe>
                 <!-- <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"><router-link :to ="{path:'/detail',query:{index:'m-1',title:'1',url:'https://test.yocoolnet.in/files/mp4/x/A/J/xAJFK.m3u8'}}"><img :src="require('../assets/img/1.jpg')" alt=""></router-link></div>
@@ -93,7 +92,7 @@ export default {
 .head .nav {background: #379be9;height: .8rem;width: 100%;overflow: hidden;overflow-x: auto;}
 .head .nav ul {width: 100%;height: 100%;display: flex;align-items: center;justify-content: space-between;padding: 0 .2rem;}
 .head .nav ul span {color: #666666;font-size: .3rem;margin: 0 .2rem;}
-.head .nav li {display: block;width: auto;height: 100%;text-align: center;color: #ffffff;font-weight: bold;font-size: .3rem;cursor: pointer;line-height: .8rem;}
+.head .nav li {display: block;width: auto;height: 100%;text-align: center;color: #ffffff;font-weight: bold;font-size: .3rem;cursor: pointer;line-height: .8rem;word-break: keep-all;}
 .head .nav li:hover {color: #ff3344;}
 .head .nav li:active {color: #ff3344;}
 .head .swiper-container {width: 100%;height: 5rem;overflow: hidden;}
