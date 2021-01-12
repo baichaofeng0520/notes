@@ -549,6 +549,24 @@
                 </li>
                 <li>
                     <p class="title">
+                        <span class="name">canvas画一个挂在墙上的钟表</span>
+                        <a class="url" href="https://www.jiangweishan.com/article/zhong2352385203850.html" target="_blank">https://www.jiangweishan.com/article/zhong2352385203850.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name"></span>
+                        <a class="url" href="" target="_blank"></a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name"></span>
+                        <a class="url" href="" target="_blank"></a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
                         <span class="name"></span>
                         <a class="url" href="" target="_blank"></a>
                     </p>
@@ -602,6 +620,18 @@
                 </block>
             </ul>
         </div>
+        <!-- video -->
+        <div class="list-con w1000 imagetitle" v-if="receive == 10">
+            <ul>
+                <block v-for="(item,index) in videoTitle" :key="index">
+                    <li>
+                        <p class="title">
+                            <router-link :to ="{path:'/detail',query:{index: 'm-1',title: item.title,id: item.id,url: item.vurl}}">{{item.title}}</router-link>
+                        </p>
+                    </li>
+                </block>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -644,7 +674,8 @@ export default {
                 {name:'image-15',id: 15,title: '图册-15',name_id: 149728},
                 {name:'image-16',id: 16,title: '图册-16',name_id: 188269}
             ],
-            imageTitle: []
+            imageTitle: [],
+            videoTitle: []
         };
     },
     computed: {
@@ -673,6 +704,7 @@ export default {
         // this.getdata()
 
         this.getImageTitle()
+        this.getVideoTitle()
         // console.log('ip地址',localStorage.getItem('Ip'))
         // console.log('ip地址',localStorage.getItem('cityname'))
     },
@@ -710,7 +742,17 @@ export default {
             }).catch((error)=>{
                 console.log(error)
             })
+        },
+
+        getVideoTitle() {
+            this.$ajax.get('http://47.107.115.52:80/getVideoTitle').then((res)=>{
+                console.log('请求python数据v',res.data)
+                this.videoTitle = res.data
+            }).catch((error)=>{
+                console.log(error)
+            })
         }
+
     },
     components: {
         myHeader

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>canvas画一个挂在墙上的钟表 - Web前端之家</title>
+    </head>
+    <style>
+        div {text-align: center;}
+        #clock {}
+    </style>
+
+    <body>
+        <div>
+            <canvas id="clock" width="200px" height="200px"></canvas>
+        </div>
+    </body>
+    <script>
+        var dom = document.getElementById("clock");
+        var ctx = dom.getContext("2d");
+        var width = ctx.canvas.width;
+        var height = ctx.canvas.height;
+        var r = width / 2;
+        var rem = width / 200;
+        // var img = new Image();
+        // img.src = "https://img6.26ts.com/2019/03-19/uyplc3hllpv.jpg";
+        // var rr = r - ctx.lineWidth;
+        // img.onload = function() {
+        //   ctx.drawImage(img, -rr, -rr, width, height);
+        // }
+
+        function drawBg() {
+            ctx.save(); //保存当前环境的状态
+            ctx.translate(r, r); //重新映射画布上的 (0,0) 位置
+            ctx.lineWidth = 10 * rem; //设置或返回当前的线条宽度
+            ctx.arc(0, 0, r - ctx.lineWidth / 2, 0, 2 * Math.PI, false); // 创建弧/曲线（用于创建圆形或部分圆）
+            ctx.stroke(); //绘制已定义的路径
+
+            for(i = 0; i < 60; i++) {
+                var rad = 2 * Math.PI / 60 * i;
+                var x = Math.cos(rad) * (r - 18 * rem);
+                var y = Math.sin(rad) * (r - 18 * rem);
+                ctx.beginPath(); // 起始一条路径，或重置当前路径
+                ctx.fillStyle = "#ccc"; //设置或返回用于填充绘画的颜色、渐变或模式
+                if(i % 5 == 0) {
+                    ctx.fillStyle = "#000";
+                } else {
+                    ctx.fillStyle = "#ccc";
+                }
+                ctx.arc(x, y, 2 * rem, 0, 2 * Math.PI, false);
+                ctx.fill(); //填充当前绘图（路径）
+            }
+            // var number = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2];
+            var number = ['III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII','I', 'II'];
+            number.forEach(function(number, i) {
+                var rad = 2 * Math.PI / 12 * i;
+                var x = Math.cos(rad) * (r - 30 * rem);
+                var y = Math.sin(rad) * (r - 30 * rem);
+                ctx.fillStyle = "#eb0011"; //钟表数字文本颜色
+                ctx.textAlign = "center"; //水平方向居中
+                ctx.textBaseline = "middle"; //垂直方向文本基线是普通的字母基线。
+                ctx.font = 14 * rem + "px 微软雅黑"; //字体大小 颜色
+                ctx.fillText(number, x, y); //在画布上绘制“被填充的”文本
+            });
+        }
+
+        function drawHour(hour, minute) {
+            ctx.save();
+            var rad = 2 * Math.PI / 12 * hour;
+            var mrad = 2 * Math.PI / 12 / 60 * minute;
+            ctx.rotate(rad + mrad); //  旋转当前绘图
+            ctx.beginPath();
+            ctx.lineCap = "round"; //设置或返回线条的结束端点样式
+            ctx.lineWidth = 6 * rem; //设置或返回当前的线条宽度
+            ctx.moveTo(0, 10 * rem); //把路径移动到画布中的指定点，不创建线条
+            ctx.lineTo(0, -r / 2); //   添加一个新点，然后在画布中创建从该点到最后指定点的线条
+            ctx.stroke(); //绘制已定义的路径
+            ctx.restore(); //   返回之前保存过的路径状态和属性
+        }
+
+        function drawMinute(minute, second) {
+            ctx.save();
+            var rad = 2 * Math.PI / 60 * minute;
+            var srad = 2 * Math.PI / 60 / 60 * second;
+            ctx.beginPath();
+            ctx.lineCap = "round";
+            ctx.lineWidth = 3 * rem;
+            ctx.rotate(rad + srad);
+            ctx.moveTo(0, 10 * rem);
+            ctx.lineTo(0, -r + 30 * rem);
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        function drawSecond(second) {
+            ctx.save();
+            var rad = 2 * Math.PI / 60 * second;
+            ctx.beginPath();
+            ctx.fillStyle = "red";
+            ctx.rotate(rad);
+            ctx.moveTo(-2 * rem, 20 * rem);
+            ctx.lineTo(2 * rem, 20 * rem);
+            ctx.lineTo(1 * rem, -r + 18 * rem);
+            ctx.lineTo(-1 * rem, -r + 18 * rem);
+            ctx.fill();
+            ctx.restore();
+        }
+
+        function drawDot() {
+            ctx.save();
+            ctx.beginPath();
+            ctx.fillStyle = "#fff";
+            ctx.arc(0, 0, 3 * rem, 0, 2 * Math.PI, false);
+            ctx.fill();
+            ctx.restore();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, width, height); //  在给定的矩形内清除指定的像素
+            var date = new Date(); //返回一个对象，其包含指定的 ImageData 对象的图像数据
+            var hour = date.getHours();
+            var mintue = date.getMinutes();
+            var scond = date.getSeconds();
+            ctx.beginPath();
+
+            drawBg();
+            drawHour(hour, mintue);
+            drawMinute(mintue, scond);
+            drawSecond(scond);
+            drawDot();
+            ctx.restore();
+        }
+
+        setInterval(draw, 1000);
+    </script>
+
+</html>

@@ -1,9 +1,9 @@
 <template>
     <div>
         <div class="head">
-            <div class="w1000">
+            <div class="w1000 h-part">
                 <!-- <embed type="application/x-shockwave-flash" src="http://cdn.abowman.com/widgets/hamster/hamster.swf" width="250" height="210" id="flashID" name="flashID" bgcolor="#FFFFFF" quality="high" flashvars="up_backgroundColor=FFFFFF" wmode="opaque" allowscriptaccess="always"> -->
-                <iframe src="../../static/hamster.html" frameborder="0" width="100%"></iframe>
+                <iframe src="../../static/demo.html" frameborder="0" width="100%" height="220px"></iframe>
                 <!-- <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"><router-link :to ="{path:'/detail',query:{index:'m-1',title:'1',url:'https://test.yocoolnet.in/files/mp4/x/A/J/xAJFK.m3u8'}}"><img :src="require('../assets/img/1.jpg')" alt=""></router-link></div>
@@ -26,7 +26,8 @@
                         <li @click="route(6)">休闲/娱乐</li><span>|</span>
                         <li @click="route(7)">工具网站</li><span>|</span>
                         <li @click="route(8)">css</li><span>|</span>
-                        <li @click="route(9)">图片</li>
+                        <li @click="route(9)">图片</li><span>|</span>
+                        <li @click="route(10)">video</li>
                     </ul>
                 </div>
             </div>
@@ -89,6 +90,7 @@ export default {
 <style scoped>
 .head {background: #ffffff;width: 100%}
 .w1000 {width: 100%}
+.head .h-part {height: auto;width: 100%;}
 .head .nav {background: #379be9;height: .8rem;width: 100%;overflow: hidden;overflow-x: auto;}
 .head .nav ul {width: 100%;height: 100%;display: flex;align-items: center;justify-content: space-between;padding: 0 .2rem;}
 .head .nav ul span {color: #666666;font-size: .3rem;margin: 0 .2rem;}
